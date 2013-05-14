@@ -1,0 +1,54 @@
+.userbucket {
+	display: block;
+	background-repeat: no-repeat;
+	height: 200px;
+	position: relative;
+	margin-bottom: 20px;
+	background-size: contain;
+}
+.userbucket.parent {
+	background-image: url('http://i.istockimg.com/file_thumbview_approve/11085198/2/stock-photo-11085198-young-family-having-fun-in-park.jpg');
+}
+.userbucket.youth {
+	background-image: url('http://i.istockimg.com/file_thumbview_approve/13589413/2/stock-photo-13589413-playful-friends.jpg');
+}
+.userbucket.community {
+	background-image: url('http://i.istockimg.com/file_thumbview_approve/10606864/2/stock-photo-10606864-hand-tower.jpg');
+}
+.userbucket span {
+	font-family: $font-secondary;
+	font-weight: bold;
+	font-size: 1.5em;
+	text-decoration: none;
+	background-color: rgba($swatch-dkBlue2, .75);
+	color: #fff;
+	line-height: 50px;
+	padding: 0px 20px;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: 0;
+}
+.userbucket:hover span {
+	background-color: rgba($swatch-dkBlue2, .85);
+}
+
+.newsletter {
+	box-sizing: border-box;
+	padding: 20px;
+	background-color: $swatch-ltBlue3;
+	box-shadow: inset 0px 0px 5px rgba($swatch-jtnnBlue, .1);
+	border: 1px solid rgba($swatch-jtnnBlue, .15);
+	margin-top: 30px;
+	
+}
+.newsletter label {
+	font-style: italic;
+	font-size: 1em;
+	color: $swatch-dkBlue3;
+}
+.newsletter input[type=email] {
+	width: 183px;
+	margin-top: 12px;
+}

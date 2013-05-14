@@ -1,0 +1,117 @@
+/*	Form Elements
+	----------------------------------------------- */
+	
+	.welcomebar label {
+		font-size: .75em;
+	}
+	
+	input{
+		padding: 3px 5px;
+		border: 2px solid transparent;
+		border-radius: 4px;
+		box-sizing: border-box;
+		font-family: $font-primary;
+		color: $swatch-jtnnBlue;
+			
+		&:focus {
+			outline: none;
+			border: 2px solid lighten($swatch-jtnnBlue, 20%);
+		}
+		
+		&[type=submit]{
+			background-color: $swatch-jtnnBlue;
+			outline: none;
+			border: none;
+			color: #fff;
+			font-weight: 700;
+			font-style: italic;
+			font-size: .75em;
+			font-family: $font-primary;
+			padding: 7px;
+			position: relative;
+			top: -1px;
+			
+			&:hover {
+				background-color: lighten($swatch-jtnnBlue, 20%);
+			}
+		}
+		
+		&[type=reset]{
+			background-color: $swatch-disabledGrey;
+			outline: none;
+			border: none;
+			color: #fff;
+			font-weight: 700;
+			font-style: italic;
+			font-size: .75em;
+			font-family: $font-primary;
+			padding: 7px;
+			position: relative;
+			top: -1px;
+			
+			&:hover {
+				background-color: lighten($swatch-disabledGrey, 5%);
+			}
+		}
+	}
+	
+	/* Reposition button in FF */
+	@-moz-document url-prefix() { 
+	  input[type=submit]{
+	     padding: 6px;
+	     top: 0px;
+	  }
+	}
+	
+	/* Placeholder Styles
+	   Currently unable to target older versions of Opera as the spec was never introduced.
+	   Newer versions of Opera (running Webkit engine) will have styles applied */
+	::-webkit-input-placeholder {
+		color: $swatch-disabledGrey;
+		font-size: .688em;
+		font-style: italic;
+		font-weight: 300;
+		font-family: $font-primary;
+		padding-top: 3px;
+	}
+	
+	:-moz-placeholder { /* Firefox 18- */
+		color: $swatch-disabledGrey;
+		font-size: .688em;
+		font-style: italic;
+		font-weight: 300;
+		font-family: $font-primary;
+		padding-top: 3px; 
+	}
+	
+	::-moz-placeholder {  /* Firefox 19+ */
+		color: $swatch-disabledGrey;
+		font-size: .688em;
+		font-style: italic;
+		font-weight: 300;
+		font-family: $font-primary;
+		padding-top: 3px;
+	}
+	
+	:-ms-input-placeholder {
+		color: $swatch-disabledGrey;
+		font-size: .688em;
+		font-style: italic;
+		font-weight: 300;
+		font-family: $font-primary;
+		padding-top: 3px;
+	}
+	
+	
+	
+	/* Search Form */
+	form.searchform {
+		background-color: $color-formFieldBG;
+		border-radius: 4px;
+		padding: 5px;
+		box-sizing: border-box;
+		
+		& input[type=search] {
+			width: 216px;
+		}
+	}

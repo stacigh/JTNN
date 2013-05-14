@@ -1,0 +1,278 @@
+// Variables
+// ------------------------------------------------
+
+// Fonts
+$font-primary: 'Droid Serif', serif;
+$font-secondary: 'Open Sans Condensed', sans-serif;
+$font-icon: 'Entypo';
+
+// Swatches
+$swatch-highlightBlue: #23b1ff;
+$swatch-ltBlue: #edf5ff;
+$swatch-ltBlue2: #b1c8e8;
+$swatch-ltBlue3: #f3f6fa;
+$swatch-mdBlue: #25589c;
+$swatch-mdBlue2: #2868be;
+$swatch-dkBlue2: #012250;
+$swatch-dkBlue3: #134a94;
+$swatch-jtnnBlue: #073e88;
+$swatch-jtnnOrange: #ffb61a;
+$swatch-disabledGrey: #d9d9d9;
+$swatch-mediumGrey: rgb(205,205,205);
+$swatch-lightGrey: rgb(235,235,235);
+
+// Gradients
+$gradient-primary: -webkit-linear-gradient(#185cae 0%, #0e387a 100%);
+$gradient-primaryReversed: -webkit-linear-gradient(#185cae 100%, #0e387a 0%);
+$gradient-primaryHover: -webkit-linear-gradient(#2cc4ff 0%, #1a9eff 100%); 
+
+// Swatches applied as colors
+$color-headingTextLight: $swatch-ltBlue;
+$color-headingTextDark: $swatch-mdBlue2;
+$color-headingLight: $swatch-ltBlue;
+$color-headingDark: $swatch-mdBlue2;
+$color-text: $swatch-mdBlue;
+$color-link: $swatch-highlightBlue;
+$color-linkHover: $color-text;
+$color-linkActive: lighten($color-link, 25%);
+$color-formFieldBG: rgba($swatch-lightGrey, .35);
+	
+	
+// Mixins
+// ------------------------------------------------	
+
+@mixin setContainerBackground($bgColor, $padding) {
+	background: rgba($bgColor,.35);
+	box-sizing: border-box;
+	border-radius: 4px;
+	box-shadow: 0px 1px 0px rgba(255, 255, 255, .35), inset 0px 1px 2px rgba(0,0,0,.5);	
+	padding: $padding;
+	}
+	
+@mixin makeIconFont {
+	font-family: $font-icon;
+	font-weight: 400;
+	font-style: normal;
+	font-size: 1.5em;
+}
+
+
+// H5BP Junk
+// ------------------------------------------------
+@import '_normalize.scss';
+@import '_h5bp.scss';
+
+
+// Grid System
+// ------------------------------------------------
+@import '_grid.scss';	
+	
+	
+// Modules
+// ------------------------------------------------	
+@import 'modules/_type.scss';
+@import 'modules/_navigation.scss';
+@import 'modules/_welcomebar.scss';
+@import 'modules/_forms.scss';
+@import 'modules/_nivo.scss';
+@import 'modules/_sidebar.scss';
+
+
+
+
+	
+// Hero Section
+// ------------------------------------------------	
+
+.hero {
+	background: url(../img/bg-blue.png);
+	border-top: 5px solid $swatch-dkBlue2;
+	border-bottom: 5px solid $swatch-dkBlue2;
+	// height: 457px;
+	height: 90px;
+	box-sizing: border-box;
+	padding-top: 20px;
+	margin-bottom: 50px;
+	color: #fff;
+	
+	&.homepage {
+		height: 475px;
+	}
+	
+	form {
+		@include setContainerBackground(#000, 5px);
+		
+		input[type=search]{
+			width: 258px;
+			height: 28px;
+			box-sizing: border-box;
+			border: 2px solid transparent;
+			
+			&:focus {
+				outline: none;
+				border: 2px solid #30baff;
+			}
+		}
+		
+		input[type=submit]{
+			@include makeIconFont;
+			background-image: $gradient-primary;
+			box-shadow: inset 0px 1px 0px rgba(#30baff,.35);
+			padding: 2px 8px;
+			position: relative;
+			top: 1px;
+			
+			&:hover {
+				background-image: $gradient-primaryHover;
+				box-shadow: inset 0px 1px 0px rgba(#fff,.35);
+			}
+		}
+	}
+	
+	&.footer {
+		height: auto;
+		padding-bottom: 20px;
+		margin: 0;
+		
+		.text-button a {
+			color: #edf5ff !important;
+			font-style: italic;
+			font-weight: normal;
+			font-size: 1.125em;
+			text-decoration: none;
+			
+			span {
+				font-family: $font-secondary;
+				font-weight: bold;
+				font-style: normal;
+				padding-top: 5px;
+				display: inline-block;
+				font-size: 1.5em;
+				text-transform: uppercase;
+				color: $swatch-jtnnOrange;
+			}
+		}
+	}
+}
+
+
+// Main Content Area
+.content {
+	padding-bottom: 50px;
+}
+
+
+// Footer
+.copyrights {
+	font-size: 0.75em;	
+	
+	img {
+		position: relative;
+		top: 8px;
+	}
+}
+
+
+// HR 
+hr.news:before {
+	content: "Latest News";
+	color: $swatch-mediumGrey;
+	text-shadow: 0px 1px 0px #fff;
+	position: relative;
+	top: -25px;
+	font-family: $font-secondary;
+	font-weight: bold;
+	letter-spacing: 1px;
+	font-size: .85em;
+	text-transform: uppercase;
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* NEED TO REORGANIZE EVERYTHING BELOW THIS LINE */
+
+
+
+
+
+
+
+
+
+/*	??
+	----------------------------------------------- */
+	body {
+		background: url(../img/bg-light.png) repeat;
+	}
+	
+	.button.flat {
+		font-family: $font-secondary;
+		font-weight: 700;
+		color: #fff;
+		text-transform: uppercase;
+		background-color: $swatch-jtnnOrange;
+		
+		&:hover {
+			background-color: lighten($swatch-jtnnOrange, 20%);
+		}
+		
+		&.flat.secondary{
+			background-color: $swatch-jtnnBlue;
+			color: #fff;
+			
+			&:hover {
+				background-color: lighten($swatch-jtnnBlue, 20%);
+			}
+		}
+	}
+
+	
+	
+/*	Header Structure
+	----------------------------------------------- */	
+	/* Buttons */
+	.button.flat {
+		padding: 12px 20px;
+		text-decoration: none;
+	}	
+	
+	header .col4 img {
+		margin: 35px 0;
+	}
+
+
+
+
+
+
+
+
+
+
+	
+	
+	
+	
+	
+	
+	
+
