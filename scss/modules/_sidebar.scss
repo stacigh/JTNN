@@ -40,7 +40,6 @@
 	background-color: $swatch-ltBlue3;
 	box-shadow: inset 0px 0px 5px rgba($swatch-jtnnBlue, .1);
 	border: 1px solid rgba($swatch-jtnnBlue, .15);
-	margin-top: 30px;
 	
 }
 .newsletter label {
@@ -51,4 +50,8 @@
 .newsletter input[type=email] {
 	width: 183px;
 	margin-top: 12px;
+}
+.widget {	
+	margin-top: 15px;
+	margin-bottom: 15px;
 }

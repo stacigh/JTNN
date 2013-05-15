@@ -9,21 +9,7 @@
 ?>
 
 	<!-- Article Heading and Search -->
-	<section class="hero footer">
-		<div class="container">
-			<div class="col4">
-				<p class="text-button"><a href="#" title="Get Involved">One person can have a big impact. Please join us today and help make a difference in Washoe County. <br /><span>Get Involved</span></a></p>
-			</div>
-			
-			<div class="col4">
-				<p class="text-button"><a href="#" title="Please Donate Today">Your generous support helps us reach more families with our educational programs<br /><span>Please Donate Today</span></a></p>
-			</div>
-			
-			<div class="col4">
-			
-			</div>
-		</div>
-	</section>
+	<?php get_sidebar('footer'); ?>
 	
 	<section class="copyrights">
 		<div class="container">

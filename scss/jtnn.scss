@@ -6,6 +6,7 @@ $font-primary: 'Droid Serif', serif;
 $font-secondary: 'Open Sans Condensed', sans-serif;
 $font-icon: 'Entypo';
 
+
 // Swatches
 $swatch-highlightBlue: #23b1ff;
 $swatch-ltBlue: #edf5ff;
@@ -17,7 +18,7 @@ $swatch-dkBlue2: #012250;
 $swatch-dkBlue3: #134a94;
 $swatch-jtnnBlue: #073e88;
 $swatch-jtnnOrange: #ffb61a;
-$swatch-disabledGrey: #d9d9d9;
+$swatch-disabledGrey: rgb(217,217,217);
 $swatch-mediumGrey: rgb(205,205,205);
 $swatch-lightGrey: rgb(235,235,235);
 
@@ -36,6 +37,9 @@ $color-link: $swatch-highlightBlue;
 $color-linkHover: $color-text;
 $color-linkActive: lighten($color-link, 25%);
 $color-formFieldBG: rgba($swatch-lightGrey, .35);
+
+$color-button: $gradient-primary;
+$color-buttonHover: $gradient-primaryHover;
 	
 	
 // Mixins
@@ -97,6 +101,7 @@ $color-formFieldBG: rgba($swatch-lightGrey, .35);
 	
 	&.homepage {
 		height: 475px;
+		margin-bottom: 0;
 	}
 	
 	form {
@@ -160,7 +165,9 @@ $color-formFieldBG: rgba($swatch-lightGrey, .35);
 .content {
 	padding-bottom: 50px;
 }
-
+.container.home-intro {
+	margin-bottom: 15px;
+}
 
 // Footer
 .copyrights {
@@ -212,7 +219,33 @@ hr.news:before {
 
 
 
+.jtfeed {
+	margin-bottom: 50px;
+	
+	&:last-of-type {
+		margin-bottom: 0;
+	}
+	
+	h3 {
+		margin-top: 0;
+		
+		a {
+			text-decoration: none;
+		    color: lighten($color-headingDark, 8%);
+		    
+			&:hover {
+				color: $color-link;
+			}
+		}
+	}
+}
 
+.metadata {
+	color: $swatch-mediumGrey;
+	font-size: .75em;
+	font-style: italic;
+	margin-top: 0;
+}
 
 
 
@@ -224,25 +257,53 @@ hr.news:before {
 		background: url(../img/bg-light.png) repeat;
 	}
 	
-	.button.flat {
-		font-family: $font-secondary;
-		font-weight: 700;
+	.button-container {
+		display: inline-block;
+		background-color: $color-formFieldBG;
+		border-radius: 6px;
+		padding: 13px 5px;
+	}
+	
+	.button {
+		font-style: italic;
 		color: #fff;
-		text-transform: uppercase;
-		background-color: $swatch-jtnnOrange;
+		text-decoration: none;
+		background-image: $color-button;
+		padding: 10px 20px;
+		border-radius: 4px;
 		
 		&:hover {
-			background-color: lighten($swatch-jtnnOrange, 20%);
-		}
-		
-		&.flat.secondary{
-			background-color: $swatch-jtnnBlue;
 			color: #fff;
+			background-image: $color-buttonHover;
+		}	
+		
+		&:active, &:visited {
+			color: #fff;
+		}	
+		
+		&.flat {
+			font-weight: 700;
+			font-style: normal;
+			font-family: $font-secondary;
+			text-transform: uppercase;
+			background-color: $swatch-jtnnOrange;
+			background-image: none;
+			border-radius: 0px;
 			
 			&:hover {
-				background-color: lighten($swatch-jtnnBlue, 20%);
+				background-color: lighten($swatch-jtnnOrange, 20%);
+				color: #fff;
+			}
+			
+			&.flat.secondary{
+				background-color: $swatch-jtnnBlue;
+				
+				&:hover {
+					background-color: lighten($swatch-jtnnBlue, 20%);
+				}
 			}
 		}
+		
 	}
 
 	

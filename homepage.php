@@ -19,7 +19,7 @@ get_header(); ?>
 	</div>
 </section>
 
-<section class="content container">
+<section class="container home-intro">
 	<article class="col12">
 		<?php if ( have_posts() ) : ?>
 
@@ -38,6 +38,53 @@ get_header(); ?>
 <section class="content container">
 	<article class="col8">
 		<hr class="news" />
+		
+		<?php // Get RSS Feed(s)
+		include_once( ABSPATH . WPINC . '/feed.php' );
+		
+		// Get a SimplePie feed object from the specified feed source.
+		$rss = fetch_feed( 'feed://feeds.feedburner.com/DrugfreeOrgJoinTogether' );
+		
+		if ( ! is_wp_error( $rss ) ) : // Checks that the object is created correctly
+		
+		    // Figure out how many total items there are, but limit it to 5. 
+		    $maxitems = $rss->get_item_quantity( 3 ); 
+		
+		    // Build an array of all the items, starting with element 0 (first element).
+		    $rss_items = $rss->get_items( 0, $maxitems );
+		
+		endif;
+		?>
+		
+
+	    <?php if ( $maxitems == 0 ) : ?>
+	        <li><?php _e( 'No items', 'my-text-domain' ); ?></li>
+	    <?php else : ?>
+	        <?php // Loop through each feed item and display each item as a hyperlink. ?>
+	        <?php foreach ( $rss_items as $item ) : ?>
+	        	
+	        	
+	        	<article class="jtfeed">
+	        		<h3>
+	        			<a href="<?php echo esc_url( $item->get_permalink() ); ?>" 
+	        			title="<?php printf( __( 'Posted %s', 'my-text-domain' ), $item->get_date('j F Y | g:i a') ); ?>">
+	                    	<?php echo esc_html( $item->get_title() ); ?>
+	                    </a>
+	                </h3>
+	                
+	                <p class="metadata">Posted on <?php echo esc_html( $item->get_date('F j, Y') ); ?> by <?php echo esc_html( $item->get_author()->get_name() ); ?> | More News on <a href="http://www.drugfree.org/join-together" title="Drugfree.org" target="_blank">Drugfree.org</a></p>
+	                
+	                <p><?php echo strip_tags( $item->get_description() ); ?></p>
+	                
+	                <div class="button-container">
+	                <a class="button" href="<?php echo esc_url( $item->get_permalink() ); ?>" title="Continue reading" target="_blank">Continue Reading</a>
+	                </div>
+	        	</article>
+	        
+	      
+	        <?php endforeach; ?>
+	    <?php endif; ?>
+		
 	</article>
 	
 	<?php get_sidebar('homepage'); ?>

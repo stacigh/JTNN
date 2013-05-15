@@ -113,7 +113,7 @@ add_action( 'after_setup_theme', 'jtnn_register_custom_background' );
 function jtnn_widgets_init() {
 	register_sidebar( array(
 		'name'          => __( 'Global Sidebar', 'jtnn' ),
-		'id'            => 'sidebar-1',
+		'id'            => 'sidebar-global',
 		'before_widget' => '<aside id="%1$s" class="widget col4 %2$s">',
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h1 class="widget-title">',
@@ -122,7 +122,7 @@ function jtnn_widgets_init() {
 	
 	register_sidebar( array(
 		'name'          => __( 'Homepage Sidebar', 'jtnn' ),
-		'id'            => 'sidebar-2',
+		'id'            => 'sidebar-homepage',
 		'before_widget' => '<aside id="%1$s" class="widget col4 %2$s">',
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h1 class="widget-title">',
@@ -131,7 +131,34 @@ function jtnn_widgets_init() {
 	
 	register_sidebar( array(
 		'name'          => __( 'Homepage User Buckets', 'jtnn' ),
-		'id'            => 'sidebar-3',
+		'id'            => 'sidebar-horizontal',
+		'before_widget' => '<aside id="%1$s" class="widget col4 %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h1 class="widget-title">',
+		'after_title'   => '</h1>',
+	) );
+	
+	register_sidebar( array(
+		'name'          => __( 'Footer Column 1', 'jtnn' ),
+		'id'            => 'sidebar-footer-one',
+		'before_widget' => '<aside id="%1$s" class="widget col4 %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h1 class="widget-title">',
+		'after_title'   => '</h1>',
+	) );
+	
+	register_sidebar( array(
+		'name'          => __( 'Footer Column 2', 'jtnn' ),
+		'id'            => 'sidebar-footer-two',
+		'before_widget' => '<aside id="%1$s" class="widget col4 %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h1 class="widget-title">',
+		'after_title'   => '</h1>',
+	) );
+	
+	register_sidebar( array(
+		'name'          => __( 'Footer Column 3', 'jtnn' ),
+		'id'            => 'sidebar-footer-three',
 		'before_widget' => '<aside id="%1$s" class="widget col4 %2$s">',
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h1 class="widget-title">',
@@ -271,12 +298,58 @@ class jtnn_newsletter extends WP_Widget
 add_action( 'widgets_init', create_function('', 'return register_widget("jtnn_newsletter");') );
 
 
-
-
-
-
-
-
+// FACEBOOK LIKE BOX
+class jtnn_facebook_likebox extends WP_Widget
+{
+  function jtnn_facebook_likebox()
+  {
+    $widget_ops = array('classname' => 'likebox', 'description' => 'Displays the Facebook Like Box in the sidebar' );
+    $this->WP_Widget('jtnn_facebook_likebox', 'JTNN Facebook Like Box', $widget_ops);
+  }
+ 
+  function form($instance)
+  {
+    $instance = wp_parse_args( (array) $instance, array( 'fbpageurl' => '' ) );
+    $fbpageurl = $instance['fbpageurl'];
+?>
+	<p>
+		<label for="<?php echo $this->get_field_id('fbpageurl'); ?>">Facebook Page URL: 
+		<input class="widefat" id="<?php echo $this->get_field_id('fbpageurl'); ?>" name="<?php echo $this->get_field_name('fbpageurl'); ?>" type="text" value="<?php echo attribute_escape($fbpageurl); ?>" />
+		</label>
+	</p>
+	
+<?php
+  }
+ 
+  function update($new_instance, $old_instance)
+  {
+    $instance = $old_instance;
+    $instance['fbpageurl'] = $new_instance['fbpageurl'];
+    return $instance;
+  }
+ 
+  function widget($args, $instance)
+  {
+    extract($args, EXTR_SKIP);
+ 
+    echo $before_widget;
+    $title = empty($instance['fbpageurl']) ? ' ' : apply_filters('widget_title', $instance['fbpageurl']);
+ 
+    // WIDGET CODE GOES HERE
+    ob_start(); 
+    ?>   
+    
+    <iframe src="//www.facebook.com/plugins/likebox.php?href=<?php echo $instance['fbpageurl']; ?>&amp;width=300&amp;height=300&amp;show_faces=true&amp;colorscheme=light&amp;stream=false&amp;show_border=false&amp;header=false&amp;appId=367986913312076" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:300px; height:300px;" allowTransparency="true"></iframe>
+     
+	<?php 
+	$layout = ob_get_contents();
+	ob_end_clean();
+	echo $layout;
+    echo $after_widget;
+  }
+ 
+}
+add_action( 'widgets_init', create_function('', 'return register_widget("jtnn_facebook_likebox");') );
 
 
 /**
