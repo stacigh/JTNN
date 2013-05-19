@@ -59,7 +59,30 @@ function jtnn_setup() {
 	 *
 	 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
 	 */
-	//add_theme_support( 'post-thumbnails' );
+	add_theme_support( 'post-thumbnails' );
+	
+	// Register Image Sizes
+	add_image_size( 'JTNN Hero', 620, 310, true );
+	add_image_size( 'JTNN Large', 450, 338, true );
+	add_image_size( 'JTNN Medium', 311, 233, true );
+	add_image_size( 'JTNN Small', 251, 188, true );
+	
+	function jtnn_display_image_size_names_muploader( $sizes ) {
+	
+	    $new_sizes = array();
+	
+	    $added_sizes = get_intermediate_image_sizes();
+	
+	    foreach( $added_sizes as $key => $value) {
+	        $new_sizes[$value] = $value;
+	    }
+	
+	    // This preserves the labels in $sizes, and merges the two arrays
+	    $new_sizes = array_merge( $new_sizes, $sizes );
+	
+	    return $new_sizes;
+	}
+	add_filter('image_size_names_choose', 'jtnn_display_image_size_names_muploader', 11, 1);
 
 	/**
 	 * This theme uses wp_nav_menu() in one location.

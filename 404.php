@@ -7,50 +7,27 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area">
-		<div id="content" class="site-content" role="main">
-
-			<article id="post-0" class="post error404 not-found">
-				<header class="entry-header">
-					<h1 class="entry-title"><?php _e( 'Oops! That page can&rsquo;t be found.', 'jtnn' ); ?></h1>
-				</header><!-- .entry-header -->
-
-				<div class="entry-content">
-					<p><?php _e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'jtnn' ); ?></p>
-
-					<?php get_search_form(); ?>
-
-					<?php the_widget( 'WP_Widget_Recent_Posts' ); ?>
-
-					<?php if ( jtnn_categorized_blog() ) : // Only show the widget if site has multiple categories. ?>
-					<div class="widget widget_categories">
-						<h2 class="widgettitle"><?php _e( 'Most Used Categories', 'jtnn' ); ?></h2>
-						<ul>
-						<?php
-							wp_list_categories( array(
-								'orderby'    => 'count',
-								'order'      => 'DESC',
-								'show_count' => 1,
-								'title_li'   => '',
-								'number'     => 10,
-							) );
-						?>
-						</ul>
-					</div><!-- .widget -->
-					<?php endif; ?>
-
-					<?php
-					/* translators: %1$s: smiley */
-					$archive_content = '<p>' . sprintf( __( 'Try looking in the monthly archives. %1$s', 'jtnn' ), convert_smilies( ':)' ) ) . '</p>';
-					the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$archive_content" );
-					?>
-
-					<?php the_widget( 'WP_Widget_Tag_Cloud' ); ?>
-
-				</div><!-- .entry-content -->
-			</article><!-- #post-0 .post .error404 .not-found -->
-
-		</div><!-- #content -->
-	</div><!-- #primary -->
+	<!-- Article Heading and Search -->
+	<section class="hero">
+		<div class="container">
+			<h1 class="col8"><?php _e( 'We can&rsquo;t find that page...', 'jtnn' ); ?></h1>
+			
+			<div class="col4">
+				<?php get_search_form(); ?>
+			</div>
+		</div>
+	</section>
+	
+	<!-- article and sidebar -->
+	<section class="content container">
+		<article  id="post-0" class="col8 post error404 not-found">
+			<p><?php _e( 'We&rsquo;re sorry but the page you&rsquo;re looking for has recently moved. Sometimes that happens with site redesigns and we are truely sorry for the error. Please try searching our site or select another page from the menu.', 'jtnn' ); ?></p>
+			
+		</article>
+		
+		<aside class="col4">
+			<?php get_sidebar('global'); ?>
+		</aside>
+	</section>
 
 <?php get_footer(); ?>

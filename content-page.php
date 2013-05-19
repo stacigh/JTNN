@@ -6,19 +6,31 @@
  */
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<h1 class="entry-title"><?php the_title(); ?></h1>
-	</header><!-- .entry-header -->
 
-	<div class="entry-content">
-		<?php the_content(); ?>
-		<?php
-			wp_link_pages( array(
-				'before' => '<div class="page-links">' . __( 'Pages:', 'jtnn' ),
-				'after'  => '</div>',
-			) );
-		?>
-	</div><!-- .entry-content -->
-	<?php edit_post_link( __( 'Edit', 'jtnn' ), '<footer class="entry-meta"><span class="edit-link">', '</span></footer>' ); ?>
-</article><!-- #post-## -->
+	<!-- Article Heading and Search -->
+	<section class="hero">
+		<div class="container">
+			<h1 class="col8"><?php the_title(); ?></h1>
+			
+			<div class="col4">
+				<?php get_search_form(); ?>
+			</div>
+		</div>
+	</section>
+	
+	<!-- article and sidebar -->
+	<section class="content container">
+		<article id="post-<?php the_ID(); ?>" class="col8 <?php post_class(); ?> ">
+			<?php the_content(); ?>
+			<?php
+				wp_link_pages( array(
+					'before' => '<div class="page-links">' . __( 'Pages:', 'jtnn' ),
+					'after'  => '</div>',
+				) );
+			?>
+		</article>
+		
+		<aside class="col4">
+			<?php get_sidebar('global'); ?>
+		</aside>
+	</section>

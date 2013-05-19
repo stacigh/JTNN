@@ -1,5 +1,11 @@
 /*	Navigation
 	----------------------------------------------- */
+	
+// Force Navigation to be on top of everything
+#menu-global-nav {
+	z-index:2000;
+}
+
 .navigation {
 	text-align: right;
 	margin-bottom: 20px;

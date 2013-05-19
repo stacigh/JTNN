@@ -80,6 +80,7 @@ $color-buttonHover: $gradient-primaryHover;
 @import 'modules/_forms.scss';
 @import 'modules/_nivo.scss';
 @import 'modules/_sidebar.scss';
+@import 'modules/_events.scss';
 
 
 
@@ -93,14 +94,13 @@ $color-buttonHover: $gradient-primaryHover;
 	border-top: 5px solid $swatch-dkBlue2;
 	border-bottom: 5px solid $swatch-dkBlue2;
 	// height: 457px;
-	height: 90px;
 	box-sizing: border-box;
 	padding-top: 20px;
+	padding-bottom: 20px;
 	margin-bottom: 50px;
 	color: #fff;
 	
 	&.homepage {
-		height: 475px;
 		margin-bottom: 0;
 	}
 	
@@ -108,10 +108,10 @@ $color-buttonHover: $gradient-primaryHover;
 		@include setContainerBackground(#000, 5px);
 		
 		input[type=search]{
-			width: 258px;
 			height: 28px;
 			box-sizing: border-box;
 			border: 2px solid transparent;
+			width: 230px;
 			
 			&:focus {
 				outline: none;
@@ -120,12 +120,8 @@ $color-buttonHover: $gradient-primaryHover;
 		}
 		
 		input[type=submit]{
-			@include makeIconFont;
 			background-image: $gradient-primary;
 			box-shadow: inset 0px 1px 0px rgba(#30baff,.35);
-			padding: 2px 8px;
-			position: relative;
-			top: 1px;
 			
 			&:hover {
 				background-image: $gradient-primaryHover;
@@ -194,6 +190,19 @@ hr.news:before {
 	text-transform: uppercase;
 	
 }
+hr.top:after {
+	content: "Top";
+	color: $swatch-mediumGrey;
+	text-shadow: 0px 1px 0px #fff;
+	position: relative;
+	top: -25px;
+	left: 900px;
+	font-family: $font-secondary;
+	font-weight: bold;
+	letter-spacing: 1px;
+	font-size: .85em;
+	text-transform: uppercase;
+}
 
 
 
@@ -247,6 +256,37 @@ hr.news:before {
 	margin-top: 0;
 }
 
+a.donate-badge {
+	display: block;
+	text-align: center;
+	margin: 0px auto;
+	width: 200px;
+	border-radius: 50%;
+	height: 200px;
+	box-sizing: border-box;
+	padding: 50px 35px 0;
+	color: #fff;
+	text-decoration: none;
+	font-family: $font-secondary;
+	font-size: 2em;
+	line-height: 1em;
+	font-weight: bold;
+	text-transform: uppercase;
+	background-image: $color-button;
+	box-shadow: inset 0px 1px 8px rgba(255,255,255,.8), inset 0px -2px 8px rgba(0,0,0,.9);
+	
+	&:hover {
+		background-image: $color-buttonHover;
+		box-shadow: inset 0px 1px 8px rgba(255,255,255,.8), inset 0px -2px 8px rgba(0,0,0,.3);
+	}
+	
+	span {
+		display: inline-block;
+		font-weight: normal;
+		font-size: .75em;
+		padding-top: 10px;
+	}
+}
 
 
 
@@ -316,7 +356,7 @@ hr.news:before {
 		text-decoration: none;
 	}	
 	
-	header .col4 img {
+	header .col3 img {
 		margin: 35px 0;
 	}
 
