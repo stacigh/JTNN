@@ -44,21 +44,24 @@
 	    		</form>
 	    		
 	    		<div class="col6">
-	        		<a href="#" title="Get involved" class="button flat secondary">Get Involved</a>
-	        		<a href="#" title="Donate" class="button flat">Donate</a>
+	        		<a href="http://localhost/about/get-involved/" title="Get involved" class="button flat secondary">Get Involved</a>
+	        		<a href="http://localhost/about/donate/" title="Donate" class="button flat">Donate</a>
 	    		</div>
 			</div>
 		</section>
 		
 		<section class="container">
-			<div class="col3">
+			<div class="col6">
 	    		<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
 	    			<img src="<?php echo get_template_directory_uri(); ?>/img/logo-jtnn.png" alt="Join Together Northern Nevada" />
 	    		</a>
 			</div>
 			
-			<div class="col9 navigation">
+			<div class="col6 clearfix">
 				<h6>Substance Abuse Help <span>775-825-HELP</span></h6>
+			</div>
+			
+			<div class="col12 navigation">
 					<nav id="site-navigation col8" class="navigation-main" role="navigation">	
 					<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
 				</nav><!-- #site-navigation -->

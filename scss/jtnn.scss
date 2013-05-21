@@ -346,6 +346,13 @@ a.donate-badge {
 		
 	}
 
+img.alignright {
+	float: right;
+}
+
+img.alignleft {
+	float: left;
+}
 	
 	
 /*	Header Structure
@@ -356,7 +363,7 @@ a.donate-badge {
 		text-decoration: none;
 	}	
 	
-	header .col3 img {
+	header img {
 		margin: 35px 0;
 	}
 

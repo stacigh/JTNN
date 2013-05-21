@@ -1100,7 +1100,6 @@ sub {
   z-index: 2000; }
 
 .navigation {
-  text-align: right;
   margin-bottom: 20px; }
 
 /* First level */
@@ -1133,7 +1132,7 @@ nav ul li {
   float: left; }
   nav ul li a {
     display: block;
-    padding: 6px 20px;
+    padding: 6px 15px;
     color: white !important;
     text-decoration: none;
     border-style: solid;
@@ -1784,6 +1783,12 @@ body {
       .button.flat.flat.secondary:hover {
         background-color: #0c6ae9; }
 
+img.alignright {
+  float: right; }
+
+img.alignleft {
+  float: left; }
+
 /*	Header Structure
 	----------------------------------------------- */
 /* Buttons */
@@ -1791,5 +1796,5 @@ body {
   padding: 12px 20px;
   text-decoration: none; }
 
-header .col3 img {
+header img {
   margin: 35px 0; }
