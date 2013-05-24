@@ -91,6 +91,12 @@ body {
 
 .container .col8 {
   width: 620px;
+  
+  .half {
+	  width: 310px;
+	  float: left;
+	  padding: 0 0 1em 0;
+  }
 }
 
 .container .col9 {

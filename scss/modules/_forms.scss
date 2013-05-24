@@ -5,7 +5,8 @@
 		font-size: .75em;
 	}
 	
-	input{
+	input,
+	textarea{
 		padding: 3px 5px;
 		border: 2px solid transparent;
 		border-radius: 4px;
@@ -20,6 +21,7 @@
 		
 		&[type=submit]{
 			background-color: $swatch-jtnnBlue;
+			background-image: $color-button;
 			outline: none;
 			border: none;
 			color: #fff;
@@ -30,9 +32,12 @@
 			padding: 7px;
 			position: relative;
 			top: -1px;
+			box-shadow: inset 0px 1px 0px rgba(#30baff,.35);
 			
 			&:hover {
 				background-color: lighten($swatch-jtnnBlue, 20%);
+				background-image: $color-buttonHover;
+				box-shadow: inset 0px 1px 0px rgba(#fff,.35);
 			}
 		}
 		
@@ -104,8 +109,9 @@
 	
 	
 	
-	/* Search Form */
-	form.searchform {
+	/* Field Wrapper */
+	form.searchform,
+	.field-wrap {
 		background-color: $color-formFieldBG;
 		border-radius: 4px;
 		padding: 5px;
@@ -113,5 +119,64 @@
 		
 		& input[type=search] {
 			width: 216px;
+		}
+	}
+	
+	/* Contact Form 7 Overrides */	
+	
+	div.wpcf7-response-output {
+		margin: 20px 0;
+		padding: 10px 15px;
+		display: block;
+		color: #fff;
+		font-style: italic;
+		border-radius:4px;
+	
+		&.wpcf7-mail-sent-ok {
+			border: 2px solid #43863a;
+			background-color: #43863a;
+		}
+		
+		&.wpcf7-mail-sent-ng {
+			border: 2px solid #ff0000;
+			background-color: #ff0000;
+		}
+		
+		&.wpcf7-spam-blocked {
+			border: 2px solid #ffa500;
+			background-color: #ffa500;
+		}
+		
+		&.wpcf7-validation-errors {
+			border: 2px solid #f7e700;
+			background-color: #f7e700;
+		}
+	}
+	
+	.wpcf7-form {
+	
+		p {
+			margin: 0;
+			
+			label:hover {
+				cursor: pointer;
+			}
+		}
+	
+		.field-wrap {
+			width: 300px;
+			margin-bottom: 10px;
+			
+			&.textarea {
+				width: 399px;
+				
+				textarea {
+					outline: none;
+				}
+			}
+		
+			input:not([type=submit]) {
+				width: 100%;
+			}
 		}
 	}

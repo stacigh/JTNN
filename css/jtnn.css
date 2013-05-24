@@ -760,6 +760,10 @@ body {
 
 .container .col8 {
   width: 620px; }
+  .container .col8 .half {
+    width: 310px;
+    float: left;
+    padding: 0 0 1em 0; }
 
 .container .col9 {
   width: 700px; }
@@ -974,7 +978,6 @@ h1 {
 
 h2 {
   font-size: 1.875em;
-  font-weight: bold;
   font-style: italic;
   margin: 0;
   line-height: 1.2em; }
@@ -1007,6 +1010,8 @@ h6 {
 h2, h3, h4, h5, h6 {
   margin-top: 50px;
   color: #2868be; }
+  h2:first-of-type, h3:first-of-type, h4:first-of-type, h5:first-of-type, h6:first-of-type {
+    margin-top: 0; }
 
 header h6 {
   margin-bottom: 5px;
@@ -1017,6 +1022,9 @@ header h6 {
     color: #134a94;
     font-style: normal;
     font-weight: bold; }
+
+.home-intro h2 {
+  margin-top: 50px; }
 
 blockquote {
   font-family: "Open Sans Condensed", sans-serif;
@@ -1119,6 +1127,9 @@ nav ul {
   position: relative;
   display: inline-table;
   margin: 0; }
+  nav ul.top-level {
+    width: 100%;
+    box-sizing: border-box; }
   nav ul:after {
     content: "";
     clear: both;
@@ -1160,6 +1171,7 @@ nav ul ul {
   position: absolute;
   top: 100%;
   font-size: 1em;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5);
   /* Third level */ }
   nav ul ul > li:first-of-type {
     box-shadow: none; }
@@ -1186,35 +1198,27 @@ nav ul ul {
     left: 100%;
     top: 0px; }
 
-.welcomebar {
-  height: 45px;
-  line-height: 45px; }
-
-.welcomebar div.col6 {
-  text-align: right; }
-
-.welcomebar {
-  background-color: #f3f6fa;
-  color: #073e88;
-  overflow: hidden; }
-
 /*	Form Elements
 	----------------------------------------------- */
 .welcomebar label {
   font-size: .75em; }
 
-input {
+input,
+textarea {
   padding: 3px 5px;
   border: 2px solid transparent;
   border-radius: 4px;
   box-sizing: border-box;
   font-family: "Droid Serif", serif;
   color: #073e88; }
-  input:focus {
+  input:focus,
+  textarea:focus {
     outline: none;
     border: 2px solid #0c6ae9; }
-  input[type=submit] {
+  input[type=submit],
+  textarea[type=submit] {
     background-color: #073e88;
+    background-image: -webkit-linear-gradient(#185cae 0%, #0e387a 100%);
     outline: none;
     border: none;
     color: #fff;
@@ -1224,10 +1228,15 @@ input {
     font-family: "Droid Serif", serif;
     padding: 7px;
     position: relative;
-    top: -1px; }
-    input[type=submit]:hover {
-      background-color: #0c6ae9; }
-  input[type=reset] {
+    top: -1px;
+    box-shadow: inset 0px 1px 0px rgba(48, 186, 255, 0.35); }
+    input[type=submit]:hover,
+    textarea[type=submit]:hover {
+      background-color: #0c6ae9;
+      background-image: -webkit-linear-gradient(#2cc4ff 0%, #1a9eff 100%);
+      box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.35); }
+  input[type=reset],
+  textarea[type=reset] {
     background-color: #d9d9d9;
     outline: none;
     border: none;
@@ -1239,7 +1248,8 @@ input {
     padding: 7px;
     position: relative;
     top: -1px; }
-    input[type=reset]:hover {
+    input[type=reset]:hover,
+    textarea[type=reset]:hover {
       background-color: #e6e6e6; }
 
 /* Reposition button in FF */
@@ -1285,14 +1295,51 @@ input {
   font-family: "Droid Serif", serif;
   padding-top: 3px; }
 
-/* Search Form */
-form.searchform {
+/* Field Wrapper */
+form.searchform,
+.field-wrap {
   background-color: rgba(235, 235, 235, 0.35);
   border-radius: 4px;
   padding: 5px;
   box-sizing: border-box; }
-  form.searchform input[type=search] {
+  form.searchform input[type=search],
+  .field-wrap input[type=search] {
     width: 216px; }
+
+/* Contact Form 7 Overrides */
+div.wpcf7-response-output {
+  margin: 20px 0;
+  padding: 10px 15px;
+  display: block;
+  color: #fff;
+  font-style: italic;
+  border-radius: 4px; }
+  div.wpcf7-response-output.wpcf7-mail-sent-ok {
+    border: 2px solid #43863a;
+    background-color: #43863a; }
+  div.wpcf7-response-output.wpcf7-mail-sent-ng {
+    border: 2px solid red;
+    background-color: #ff0000; }
+  div.wpcf7-response-output.wpcf7-spam-blocked {
+    border: 2px solid orange;
+    background-color: #ffa500; }
+  div.wpcf7-response-output.wpcf7-validation-errors {
+    border: 2px solid #f7e700;
+    background-color: #f7e700; }
+
+.wpcf7-form p {
+  margin: 0; }
+  .wpcf7-form p label:hover {
+    cursor: pointer; }
+.wpcf7-form .field-wrap {
+  width: 300px;
+  margin-bottom: 10px; }
+  .wpcf7-form .field-wrap.textarea {
+    width: 399px; }
+    .wpcf7-form .field-wrap.textarea textarea {
+      outline: none; }
+  .wpcf7-form .field-wrap input:not([type=submit]) {
+    width: 100%; }
 
 /*
  * jQuery Nivo Slider v3.2
@@ -1437,7 +1484,7 @@ form.searchform {
   font-weight: bold;
   font-size: 1.5em;
   text-decoration: none;
-  background-color: rgba(1, 34, 80, 0.75);
+  background-color: rgba(7, 62, 136, 0.85);
   color: #fff;
   line-height: 50px;
   padding: 0px 20px;
@@ -1448,9 +1495,11 @@ form.searchform {
   margin: 0; }
 
 .userbucket:hover span {
-  background-color: rgba(1, 34, 80, 0.85); }
+  background-color: rgba(7, 62, 136, 0.95); }
 
-.newsletter {
+/*	Social & User Buckets
+	----------------------------------------------- */
+.newsletter, .container-socialmedia {
   box-sizing: border-box;
   padding: 20px;
   background-color: #f3f6fa;
@@ -1460,7 +1509,7 @@ form.searchform {
 .newsletter label {
   font-style: italic;
   font-size: 1em;
-  color: #134a94; }
+  color: #073e88; }
 
 .newsletter input[type=email] {
   width: 183px;
@@ -1469,6 +1518,14 @@ form.searchform {
 .widget {
   margin-top: 15px;
   margin-bottom: 15px; }
+
+.container-socialmedia {
+  position: relative;
+  top: 10px; }
+  .container-socialmedia p {
+    margin: 0;
+    margin-bottom: 10px;
+    font-size: .80em; }
 
 #tribe-events-calendar-header, .tribe-events-calendar, #tribe-events-content .ical, .events-single #content .ical, a.gmap, .tribe-events-event-list-meta td, .tribe-events-nav, #tribe-events-event-meta, span.back, .eventsListWidget .dig-in, .eventsAdvancedListWidget .dig-in, .gcal-add {
   font-family: inherit !important; }
@@ -1541,7 +1598,8 @@ table.tribe-events-calendar {
   font-size: 0.688em; }
 
 .tribe-events-calendar td.tribe-events-present .daynum, .tribe-events-calendar td.tribe-events-present .daynum > a {
-  background-color: #2868be !important; }
+  background-color: #073e88 !important;
+  color: white !important; }
 
 .tribe-events-calendar td.tribe-events-past .daynum, .tribe-events-calendar td.tribe-events-past .daynum > a {
   color: #bbbbbb !important; }
@@ -1610,6 +1668,7 @@ h4.tribe-events-event-day {
 p.tribe-promo-banner {
   font-size: 0.75em; }
 
+/* NEED TO REORGANIZE EVERYTHING BELOW THIS LINE */
 .hero {
   background: url(../img/bg-blue.png);
   border-top: 5px solid #012250;
@@ -1627,24 +1686,13 @@ p.tribe-promo-banner {
     border-radius: 4px;
     box-shadow: 0px 1px 0px rgba(255, 255, 255, 0.35), inset 0px 1px 2px rgba(0, 0, 0, 0.5);
     padding: 5px; }
-    .hero form input[type=search] {
-      height: 28px;
-      box-sizing: border-box;
-      border: 2px solid transparent;
-      width: 230px; }
-      .hero form input[type=search]:focus {
-        outline: none;
-        border: 2px solid #30baff; }
-    .hero form input[type=submit] {
-      background-image: -webkit-linear-gradient(#185cae 0%, #0e387a 100%);
-      box-shadow: inset 0px 1px 0px rgba(48, 186, 255, 0.35); }
-      .hero form input[type=submit]:hover {
-        background-image: -webkit-linear-gradient(#2cc4ff 0%, #1a9eff 100%);
-        box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.35); }
   .hero.footer {
     height: auto;
     padding-bottom: 20px;
     margin: 0; }
+    .hero.footer .text-button:hover span {
+      color: #23b1ff;
+      cursor: pointer; }
     .hero.footer .text-button a {
       color: #edf5ff !important;
       font-style: italic;
@@ -1671,7 +1719,16 @@ p.tribe-promo-banner {
   font-size: 0.75em; }
   .copyrights img {
     position: relative;
-    top: 8px; }
+    top: 8px;
+    filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='grayscale'><feColorMatrix type='matrix' values='0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0'/></filter></svg>#grayscale");
+    /* Firefox 10+, Firefox on Android */
+    filter: gray;
+    /* IE6-9 */
+    -webkit-filter: grayscale(100%);
+    /* Chrome 19+, Safari 6+, Safari 6+ iOS */ }
+    .copyrights img:hover {
+      filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='grayscale'><feColorMatrix type='matrix' values='1 0 0 0 0, 0 1 0 0 0, 0 0 1 0 0, 0 0 0 1 0'/></filter></svg>#grayscale");
+      -webkit-filter: grayscale(0%); }
 
 hr.news:before {
   content: "Latest News";
@@ -1698,7 +1755,26 @@ hr.top:after {
   font-size: .85em;
   text-transform: uppercase; }
 
-/* NEED TO REORGANIZE EVERYTHING BELOW THIS LINE */
+.calls-to-action {
+  text-align: right;
+  padding-top: 50px; }
+  .calls-to-action h6 {
+    margin-top: 25px; }
+
+.nav-previous,
+.nav-next {
+  width: 50%;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box; }
+
+.nav-previous {
+  float: left; }
+
+.nav-next {
+  float: right;
+  text-align: right; }
+
 .jtfeed {
   margin-bottom: 50px; }
   .jtfeed:last-of-type {
@@ -1791,6 +1867,9 @@ img.alignleft {
 
 /*	Header Structure
 	----------------------------------------------- */
+#page {
+  border-top: 5px solid #134a94; }
+
 /* Buttons */
 .button.flat {
   padding: 12px 20px;

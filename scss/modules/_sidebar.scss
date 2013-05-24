@@ -20,7 +20,7 @@
 	font-weight: bold;
 	font-size: 1.5em;
 	text-decoration: none;
-	background-color: rgba($swatch-dkBlue2, .75);
+	background-color: rgba($swatch-jtnnBlue, .85);
 	color: #fff;
 	line-height: 50px;
 	padding: 0px 20px;
@@ -31,10 +31,12 @@
 	margin: 0;
 }
 .userbucket:hover span {
-	background-color: rgba($swatch-dkBlue2, .85);
+	background-color: rgba($swatch-jtnnBlue, .95);
 }
 
-.newsletter {
+/*	Social & User Buckets
+	----------------------------------------------- */	
+.newsletter, .container-socialmedia  {
 	box-sizing: border-box;
 	padding: 20px;
 	background-color: $swatch-ltBlue3;
@@ -45,7 +47,7 @@
 .newsletter label {
 	font-style: italic;
 	font-size: 1em;
-	color: $swatch-dkBlue3;
+	color: $swatch-jtnnBlue;
 }
 .newsletter input[type=email] {
 	width: 183px;
@@ -54,4 +56,15 @@
 .widget {	
 	margin-top: 15px;
 	margin-bottom: 15px;
+}
+
+.container-socialmedia {
+	position: relative;
+	top: 10px;
+	
+	p {
+		margin: 0;
+		margin-bottom: 10px;
+		font-size: .80em;
+	}
 }

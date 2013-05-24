@@ -34,7 +34,6 @@ h1 {
 
 h2 {
     font-size: 1.875em;
-    font-weight: bold;
     font-style: italic;
     margin: 0;
     line-height: 1.2em;
@@ -71,6 +70,10 @@ h6 {
 h2, h3, h4, h5, h6 {
 	margin-top: 50px;
     color: $color-headingDark;
+    
+    &:first-of-type {
+	    margin-top: 0;
+    }
 }
 
 // Heading Special Cases
@@ -87,6 +90,10 @@ header h6 {
 		font-style: normal;
 		font-weight: bold;
 	}
+}
+
+.home-intro h2 {
+	margin-top: 50px;
 }
 
 // Quotes

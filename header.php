@@ -34,36 +34,23 @@
 <div id="page" class="hfeed site">
 	<?php do_action( 'before' ); ?>
 	
-	<header>
-		<section class="welcomebar">
-			<div class="container">
-	    		<form class="col6">
-	    			<label for="wb-subscribe">Join our mailing list</label>
-	    			<input type="email" name="wb-subscribe" id="wb-subscribe" placeholder="enter your email address" />
-	    			<input type="submit" value="Subscribe" />
-	    		</form>
-	    		
-	    		<div class="col6">
-	        		<a href="http://localhost/about/get-involved/" title="Get involved" class="button flat secondary">Get Involved</a>
-	        		<a href="http://localhost/about/donate/" title="Donate" class="button flat">Donate</a>
-	    		</div>
-			</div>
-		</section>
-		
+	<header>		
 		<section class="container">
-			<div class="col6">
+			<div class="branding col6">
 	    		<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
 	    			<img src="<?php echo get_template_directory_uri(); ?>/img/logo-jtnn.png" alt="Join Together Northern Nevada" />
 	    		</a>
 			</div>
 			
-			<div class="col6 clearfix">
+			<div class="calls-to-action col6 clearfix">
+				<a href="http://localhost/about/get-involved/" title="Get involved" class="button flat secondary">Get Involved</a>
+	        	<a href="http://localhost/about/donate/" title="Donate" class="button flat">Donate</a>
 				<h6>Substance Abuse Help <span>775-825-HELP</span></h6>
 			</div>
 			
 			<div class="col12 navigation">
 					<nav id="site-navigation col8" class="navigation-main" role="navigation">	
-					<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+					<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'top-level' ) ); ?>
 				</nav><!-- #site-navigation -->
 			</div>
 		</section>

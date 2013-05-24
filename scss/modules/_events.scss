@@ -83,7 +83,8 @@ table.tribe-events-calendar {
 	font-size:0.688em;
 }
 .tribe-events-calendar td.tribe-events-present .daynum, .tribe-events-calendar td.tribe-events-present .daynum > a  {
-	background-color: #2868be !important;
+	background-color: $swatch-jtnnBlue !important;
+	color: #fff !important;
 }
 .tribe-events-calendar td.tribe-events-past .daynum, .tribe-events-calendar td.tribe-events-past .daynum > a {
 	color: #bbb !important;
