@@ -187,7 +187,7 @@ kbd,
 pre,
 samp {
   font-family: monospace, serif;
-  _font-family: "courier new", monospace;
+  _font-family: 'courier new', monospace;
   font-size: 1em; }
 
 /**
@@ -306,7 +306,7 @@ form {
  * Define consistent border, margin, and padding.
  */
 fieldset {
-  border: 1px solid silver;
+  border: 1px solid #c0c0c0;
   margin: 0 2px;
   padding: 0.35em 0.625em 0.75em; }
 
@@ -634,7 +634,7 @@ textarea {
 @media print {
   * {
     background: transparent !important;
-    color: black !important;
+    color: #000 !important;
     /* Black prints faster: h5bp.com/s */
     box-shadow: none !important;
     text-shadow: none !important; }
@@ -659,7 +659,7 @@ textarea {
 
   pre,
   blockquote {
-    border: 1px solid #999999;
+    border: 1px solid #999;
     page-break-inside: avoid; }
 
   thead {
@@ -1015,11 +1015,11 @@ h2, h3, h4, h5, h6 {
 
 header h6 {
   margin-bottom: 5px;
-  color: #b1c8e8;
+  color: #23b1ff;
   font-style: italic;
   font-weight: normal; }
   header h6 span {
-    color: #134a94;
+    color: #2868be;
     font-style: normal;
     font-weight: bold; }
 
@@ -1078,7 +1078,7 @@ kbd,
 pre,
 samp {
   font-family: monospace, serif;
-  _font-family: "courier new", monospace;
+  _font-family: 'courier new', monospace;
   font-size: 1em; }
 
 pre {
@@ -1144,7 +1144,7 @@ nav ul li {
   nav ul li a {
     display: block;
     padding: 6px 15px;
-    color: white !important;
+    color: #ffffff !important;
     text-decoration: none;
     border-style: solid;
     border-width: 1px;
@@ -1318,10 +1318,10 @@ div.wpcf7-response-output {
     border: 2px solid #43863a;
     background-color: #43863a; }
   div.wpcf7-response-output.wpcf7-mail-sent-ng {
-    border: 2px solid red;
+    border: 2px solid #ff0000;
     background-color: #ff0000; }
   div.wpcf7-response-output.wpcf7-spam-blocked {
-    border: 2px solid orange;
+    border: 2px solid #ffa500;
     background-color: #ffa500; }
   div.wpcf7-response-output.wpcf7-validation-errors {
     border: 2px solid #f7e700;
@@ -1577,11 +1577,11 @@ select.tribe-events-dropdown {
   font-weight: inherit !important;
   line-height: inherit !important;
   margin: 0 !important;
-  padding: 0.5em 0 1em !important; }
+  padding: .5em 0 1em !important; }
 
 .events-archive .event-day, .single-tribe_venue .event-day, .venue-events .event-day {
   font-size: 1.125em !important;
-  color: #666666 !important;
+  color: #666 !important;
   font-weight: normal !important; }
 
 .tribe-events-event-meta-desc, .tribe-events-event-day {
@@ -1599,17 +1599,17 @@ table.tribe-events-calendar {
 
 .tribe-events-calendar td.tribe-events-present .daynum, .tribe-events-calendar td.tribe-events-present .daynum > a {
   background-color: #073e88 !important;
-  color: white !important; }
+  color: #fff !important; }
 
 .tribe-events-calendar td.tribe-events-past .daynum, .tribe-events-calendar td.tribe-events-past .daynum > a {
-  color: #bbbbbb !important; }
+  color: #bbb !important; }
 
 .tribe-events-calendar th {
   background-color: #2868be !important;
-  color: white !important; }
+  color: #fff !important; }
 
 .tribe-events-calendar td a {
-  font-size: 0.917em !important; }
+  font-size: .917em !important; }
 
 .tribe-events-tooltip .tribe-events-event-title {
   font-size: 0.75em; }
@@ -1730,10 +1730,57 @@ p.tribe-promo-banner {
       filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='grayscale'><feColorMatrix type='matrix' values='1 0 0 0 0, 0 1 0 0 0, 0 0 1 0 0, 0 0 0 1 0'/></filter></svg>#grayscale");
       -webkit-filter: grayscale(0%); }
 
+.eventsAdvancedListWidget h1 {
+  color: #fff;
+  font-family: "Open Sans Condensed", sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: .85em;
+  border-bottom: 1px solid #fff;
+  padding-bottom: 3px; }
+.eventsAdvancedListWidget ul {
+  list-style-type: none;
+  margin: 0;
+  background-color: #edf5ff;
+  color: #fff; }
+
+#sidebar-blog h1.widget-title {
+  font-size: 1.1em;
+  color: #2868be;
+  font-family: "Open Sans Condensed", sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-bottom: 1px solid #b1c8e8;
+  padding-bottom: .5em; }
+#sidebar-blog ul {
+  list-style-type: none;
+  margin: 0; }
+  #sidebar-blog ul li {
+    padding: .5em 0;
+    border-bottom: 1px solid #b1c8e8;
+    box-shadow: 0px 1px 0px rgba(255, 255, 255, 0.5);
+    font-size: .85em; }
+    #sidebar-blog ul li a {
+      text-decoration: none;
+      color: #2868be; }
+      #sidebar-blog ul li a:hover {
+        color: #23b1ff; }
+
+.entry-title {
+  margin-bottom: .5em; }
+  .entry-title a {
+    text-decoration: none;
+    color: #466ca4; }
+    .entry-title a:hover {
+      color: #23b1ff; }
+
+.navigation-paging {
+  margin-top: 1.5em; }
+
 hr.news:before {
   content: "Latest News";
   color: #cdcdcd;
-  text-shadow: 0px 1px 0px white;
+  text-shadow: 0px 1px 0px #fff;
   position: relative;
   top: -25px;
   font-family: "Open Sans Condensed", sans-serif;
@@ -1745,7 +1792,7 @@ hr.news:before {
 hr.top:after {
   content: "Top";
   color: #cdcdcd;
-  text-shadow: 0px 1px 0px white;
+  text-shadow: 0px 1px 0px #fff;
   position: relative;
   top: -25px;
   left: 900px;
