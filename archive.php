@@ -9,14 +9,12 @@
 
 get_header(); ?>
 
-	<section id="primary" class="content-area">
-		<div id="content" class="site-content" role="main">
-
-		<?php if ( have_posts() ) : ?>
-
-			<header class="page-header">
-				<h1 class="page-title">
-					<?php
+	<!-- Heading and Search -->
+	<section class="hero">
+		<div class="container">
+			<h1 class="col8">
+				
+				<?php
 						if ( is_category() ) :
 							printf( __( 'Category Archives: %s', 'jtnn' ), '<span>' . single_cat_title( '', false ) . '</span>' );
 
@@ -64,7 +62,9 @@ get_header(); ?>
 
 						endif;
 					?>
-				</h1>
+				
+			</h1>
+			
 				<?php
 					if ( is_category() ) :
 						// show an optional category description
@@ -82,7 +82,18 @@ get_header(); ?>
 
 					endif;
 				?>
-			</header><!-- .page-header -->
+			
+			<span class="col4">
+				<?php get_search_form(); ?>
+			</div>
+		</div>
+	</section>
+	
+	<!-- article and sidebar -->
+	<section class="content container">
+		<article id="post-<?php the_ID(); ?>" <?php post_class('col8'); ?>>
+
+		<?php if ( have_posts() ) : ?>
 
 			<?php /* Start the Loop */ ?>
 			<?php while ( have_posts() ) : the_post(); ?>
@@ -104,9 +115,11 @@ get_header(); ?>
 			<?php get_template_part( 'no-results', 'archive' ); ?>
 
 		<?php endif; ?>
+		</article>
+		
+		<aside class="col4">
+			<?php get_sidebar(); ?>
+		</aside>
+	</section>
 
-		</div><!-- #content -->
-	</section><!-- #primary -->
-
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>

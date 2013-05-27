@@ -6,17 +6,24 @@
  */
 
 get_header(); ?>
-
-	<div id="primary" class="content-area">
-		<div id="content" class="site-content" role="main">
-		
-		SINGLE.PHP
+	<!-- Heading and Search -->
+	<section class="hero">
+		<div class="container">
+			<h1 class="col8">Blog</h1>
+			
+			<span class="col4">
+				<?php get_search_form(); ?>
+			</div>
+		</div>
+	</section>
+	
+	<!-- article and sidebar -->
+	<section class="content container">
+		<article id="post-<?php the_ID(); ?>" <?php post_class('col8'); ?>>
 
 		<?php while ( have_posts() ) : the_post(); ?>
 
 			<?php get_template_part( 'content', 'single' ); ?>
-
-			<?php jtnn_content_nav( 'nav-below' ); ?>
 
 			<?php
 				// If comments are open or we have at least one comment, load up the comment template
@@ -25,9 +32,11 @@ get_header(); ?>
 			?>
 
 		<?php endwhile; // end of the loop. ?>
-
-		</div><!-- #content -->
-	</div><!-- #primary -->
-
-<?php get_sidebar(); ?>
+		
+		</article>
+		
+		<aside class="col4">
+			<?php get_sidebar(); ?>
+		</aside>
+	</section>
 <?php get_footer(); ?>

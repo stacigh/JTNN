@@ -13,11 +13,21 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area">
-		<div id="content" class="site-content" role="main">
+	<!-- Heading and Search -->
+	<section class="hero">
+		<div class="container">
+			<h1 class="col8">Blog</h1>
+			
+			<span class="col4">
+				<?php get_search_form(); ?>
+			</div>
+		</div>
+	</section>
+	
+	<!-- article and sidebar -->
+	<section class="content container">
+		<article class="col8">
 		
-		INDEX.PHP
-
 		<?php if ( have_posts() ) : ?>
 
 			<?php /* Start the Loop */ ?>
@@ -40,9 +50,13 @@ get_header(); ?>
 			<?php get_template_part( 'no-results', 'index' ); ?>
 
 		<?php endif; ?>
+		
+		</article>
+		
+		
+		<aside class="col4">
+			<?php get_sidebar(); ?>
+		</aside>
+	</section>		
 
-		</div><!-- #content -->
-	</div><!-- #primary -->
-
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>

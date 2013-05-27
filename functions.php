@@ -9,7 +9,7 @@
  * Set the content width based on the theme's design and stylesheet.
  */
 if ( ! isset( $content_width ) )
-	$content_width = 640; /* pixels */
+	$content_width = 960; /* pixels */
 
 /*
  * Load Jetpack compatibility file.
@@ -35,11 +35,6 @@ function jtnn_setup() {
 	 * Custom functions that act independently of the theme templates
 	 */
 	require( get_template_directory() . '/inc/extras.php' );
-
-	/**
-	 * Customizer additions
-	 */
-	require( get_template_directory() . '/inc/customizer.php' );
 
 	/**
 	 * Make theme available for translation
@@ -100,43 +95,21 @@ endif; // jtnn_setup
 add_action( 'after_setup_theme', 'jtnn_setup' );
 
 /**
- * Setup the WordPress core custom background feature.
- *
- * Use add_theme_support to register support for WordPress 3.4+
- * as well as provide backward compatibility for WordPress 3.3
- * using feature detection of wp_get_theme() which was introduced
- * in WordPress 3.4.
- *
- * @todo Remove the 3.3 support when WordPress 3.6 is released.
- *
- * Hooks into the after_setup_theme action.
- */
-function jtnn_register_custom_background() {
-	$args = array(
-		'default-color' => 'ffffff',
-		'default-image' => '',
-	);
-
-	$args = apply_filters( 'jtnn_custom_background_args', $args );
-
-	if ( function_exists( 'wp_get_theme' ) ) {
-		add_theme_support( 'custom-background', $args );
-	} else {
-		define( 'BACKGROUND_COLOR', $args['default-color'] );
-		if ( ! empty( $args['default-image'] ) )
-			define( 'BACKGROUND_IMAGE', $args['default-image'] );
-		add_custom_background();
-	}
-}
-add_action( 'after_setup_theme', 'jtnn_register_custom_background' );
-
-/**
  * Register widgetized area and update sidebar with default widgets
  */
 function jtnn_widgets_init() {
 	register_sidebar( array(
 		'name'          => __( 'Global Sidebar', 'jtnn' ),
 		'id'            => 'sidebar-global',
+		'before_widget' => '<aside id="%1$s" class="widget col4 %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h1 class="widget-title">',
+		'after_title'   => '</h1>',
+	) );
+	
+	register_sidebar( array(
+		'name'          => __( 'Blog Sidebar', 'jtnn' ),
+		'id'            => 'sidebar-blog',
 		'before_widget' => '<aside id="%1$s" class="widget col4 %2$s">',
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h1 class="widget-title">',
@@ -394,8 +367,3 @@ function jtnn_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'jtnn_scripts' );
-
-/**
- * Implement the Custom Header feature
- */
-//require( get_template_directory() . '/inc/custom-header.php' );

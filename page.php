@@ -12,11 +12,32 @@
 
 get_header(); ?>
 
-			<?php while ( have_posts() ) : the_post(); ?>
+	<?php while ( have_posts() ) : the_post(); ?>
+			
+	<!-- Heading and Search -->
+	<section class="hero">
+		<div class="container">
+			<h1 class="col8"><?php the_title(); ?></h1>
+			
+			<span class="col4">
+				<?php get_search_form(); ?>
+			</div>
+		</div>
+	</section>
+	
+	<!-- article and sidebar -->
+	<section class="content container">
+		<article id="post-<?php the_ID(); ?>" <?php post_class('col8'); ?>>
 
-				<?php get_template_part( 'content', 'page' ); ?>
+			<?php get_template_part( 'content', 'page' ); ?>
+			
+		</article>
 
-			<?php endwhile; // end of the loop. ?>
-
-
+		<?php endwhile; // end of the loop. ?>
+		
+		<aside class="col4">
+			<?php get_sidebar('global'); ?>
+		</aside>
+	
+	</section>
 <?php get_footer(); ?>

@@ -15,5 +15,5 @@
 			<?php get_search_form(); ?>
 		</aside>
 	
-	<?php endif; // end sidebar widget area ?>
+	<?php endif; // end sidebar widget area ?>	
 </aside>

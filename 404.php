@@ -21,7 +21,7 @@ get_header(); ?>
 	<!-- article and sidebar -->
 	<section class="content container">
 		<article  id="post-0" class="col8 post error404 not-found">
-			<p><?php _e( 'We&rsquo;re sorry but the page you&rsquo;re looking for has recently moved. Sometimes that happens with site redesigns and we are truely sorry for the error. Please try searching our site or select another page from the menu.', 'jtnn' ); ?></p>
+			<p><?php _e( 'We&rsquo;re sorry but the page you&rsquo;re looking for has recently moved. Sometimes that happens with site redesigns and we are truly sorry for the error. Please try searching our site or select another page from the menu.', 'jtnn' ); ?></p>
 			
 		</article>
 		
