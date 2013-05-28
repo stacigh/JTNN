@@ -4,17 +4,31 @@ get_header(); ?>
 
 <section class="hero homepage">
 	<div class="container">
-	
-            <div id="slider" class="nivoSlider">
-                <img src="http://placekitten.com/630/354" data-thumb="images/toystory.jpg" alt="" />
-                <a href="http://dev7studios.com"><img src="images/up.jpg" data-thumb="images/up.jpg" alt="" title="This is an example of a caption" /></a>
-                <img src="http://placehold.it/630x354" data-thumb="images/walle.jpg" alt="" data-transition="slideInLeft" />
-                <img src="http://placekitten.com/g/630/354" data-thumb="images/nemo.jpg" alt="" title="#htmlcaption" />
-            </div>
-            <div id="htmlcaption" class="nivo-html-caption">
-                <strong>This</strong> is an example of a <em>HTML</em> caption with <a href="#">a link</a>. 
-            </div>		
+		<div class="hero-slideshow">
+		<?php echo do_shortcode('[jtnn_homepage_slideshow]'); ?>
+		</div>
 		
+		<div class="hero-youtube">
+			<iframe width="260" height="147" src="http://www.youtube.com/embed/eYpu_qY6JOI" frameborder="0" allowfullscreen></iframe>
+		</div>
+		
+		<div class="hero-social-banner">
+			<img src="<?php echo get_template_directory_uri(); ?>/img/banner-subscribe.png" title="JTNN on YouTube">
+		</div>
+		
+		<div class="hero-social">
+			<div class="social-icon-wrap">
+				<a href="https://www.facebook.com/pages/Join-Together-Northern-Nevada/171403951769" title="JTNN on Facebook" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/img/facebook-48.png" title="JTNN on Facebook"></a>
+			</div>
+			
+			<div class="social-icon-wrap">
+				<a href="https://twitter.com/jointogetherNV" title="JTNN on Twitter" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/img/twitter-48.png" title="JTNN on Twitter"></a>
+			</div>
+			
+			<div class="social-icon-wrap">
+				<a href="http://www.youtube.com/jtnorthernnevada" title="JTNN on YouTube" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/img/youtube-48.png" title="JTNN on YouTube"></a>
+			</div>
+		</div>
 		
 	</div>
 </section>

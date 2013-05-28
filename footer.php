@@ -18,9 +18,9 @@
 			</div>
 			
 			<div class="col2">
-				<a href="https://www.facebook.com/pages/Join-Together-Northern-Nevada/171403951769" title="JTNN on Facebook" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/img/facebook.png" title="JTNN on Facebook"></a>
-				<a href="https://twitter.com/jointogetherNV" title="JTNN on Twitter" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/img/twitter.png" title="JTNN on Twitter"></a>
-				<a href="http://www.youtube.com/jtnorthernnevada" title="JTNN on YouTube" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/img/youtube.png" title="JTNN on YouTube"></a>
+				<a href="https://www.facebook.com/pages/Join-Together-Northern-Nevada/171403951769" title="JTNN on Facebook" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/img/facebook-24.png" title="JTNN on Facebook"></a>
+				<a href="https://twitter.com/jointogetherNV" title="JTNN on Twitter" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/img/twitter-24.png" title="JTNN on Twitter"></a>
+				<a href="http://www.youtube.com/jtnorthernnevada" title="JTNN on YouTube" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/img/youtube-24.png" title="JTNN on YouTube"></a>
 			</div>
 		</div>
 	</section>
