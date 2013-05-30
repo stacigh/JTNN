@@ -7,7 +7,7 @@ $font-secondary: 'Open Sans Condensed', sans-serif;
 $font-icon: 'Entypo';
 
 
-// Swatches
+// Swatches    dce4ef
 $swatch-ltBlue: #edf5ff;
 $swatch-ltBlue2: #b1c8e8; 
 $swatch-ltBlue3: #f3f6fa;
@@ -27,6 +27,7 @@ $swatch-highlightBlue: #23b1ff;
 $gradient-primary: -webkit-linear-gradient(#185cae 0%, #0e387a 100%);
 $gradient-primaryReversed: -webkit-linear-gradient(#185cae 100%, #0e387a 0%);
 $gradient-primaryHover: -webkit-linear-gradient(#2cc4ff 0%, #1a9eff 100%); 
+
 
 // Swatches applied as colors
 $color-headingTextLight: $swatch-ltBlue;
@@ -49,8 +50,9 @@ $color-buttonHover: $gradient-primaryHover;
 @mixin setContainerBackground($bgColor, $padding) {
 	background: rgba($bgColor,.35);
 	box-sizing: border-box;
+	-moz-box-sizing: border-box;
 	border-radius: 4px;
-	box-shadow: 0px 1px 0px rgba(255, 255, 255, .35), inset 0px 1px 2px rgba(0,0,0,.5);	
+	box-shadow: 0px 1px 0px rgba(255, 255, 255, .35), inset 0px 1px 2px rgba($bgColor,.5);	
 	padding: $padding;
 	}
 	
@@ -59,6 +61,39 @@ $color-buttonHover: $gradient-primaryHover;
 	font-weight: 400;
 	font-style: normal;
 	font-size: 1.5em;
+}
+
+@mixin setBackgroundGradient($from: #185cae, $to: #0e387a, $fallback: $swatch-jtnnBlue) {
+    background: $to;
+    background: url($fallback);
+    background: -moz-linear-gradient(top, $from 0%, $to 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$from), color-stop(100%,$to));
+    background: -webkit-linear-gradient(top, $from 0%,$to 100%);
+    background: -o-linear-gradient(top, $from 0%,$to 100%);
+    background: -ms-linear-gradient(top, $from 0%,$to 100%);
+    background: linear-gradient(to bottom, $from 0%,$to 100%);
+}
+
+@mixin setBackgroundGradientReversed($from: #0e387a, $to: #185cae, $fallback: $swatch-jtnnBlue) {
+    background: $to;
+    background: url($fallback);
+    background: -moz-linear-gradient(top, $from 0%, $to 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$from), color-stop(100%,$to));
+    background: -webkit-linear-gradient(top, $from 0%,$to 100%);
+    background: -o-linear-gradient(top, $from 0%,$to 100%);
+    background: -ms-linear-gradient(top, $from 0%,$to 100%);
+    background: linear-gradient(to bottom, $from 0%,$to 100%);
+}
+
+@mixin setBackgroundGradientHover($from: #2cc4ff, $to: #1a9eff, $fallback: $swatch-highlightBlue) {
+    background: $to;
+    background: url($fallback);
+    background: -moz-linear-gradient(top, $from 0%, $to 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$from), color-stop(100%,$to));
+    background: -webkit-linear-gradient(top, $from 0%,$to 100%);
+    background: -o-linear-gradient(top, $from 0%,$to 100%);
+    background: -ms-linear-gradient(top, $from 0%,$to 100%);
+    background: linear-gradient(to bottom, $from 0%,$to 100%);
 }
 
 
@@ -99,6 +134,7 @@ $color-buttonHover: $gradient-primaryHover;
 	border-bottom: 5px solid $swatch-dkBlue2;
 	// height: 457px;
 	box-sizing: border-box;
+	-moz-box-sizing: border-box;
 	padding-top: 20px;
 	padding-bottom: 20px;
 	margin-bottom: 50px;
@@ -118,6 +154,7 @@ $color-buttonHover: $gradient-primaryHover;
 		margin: 0;
 		
 		.text-button {
+			margin: 3.5em 0 0;
 		
 			&:hover span {
 				color: $color-link;
@@ -190,11 +227,65 @@ $color-buttonHover: $gradient-primaryHover;
 	ul {
 		list-style-type: none;
 		margin: 0;
-		background-color: $swatch-ltBlue;
 		color: #fff;
-	}
-	
-	
+		
+		li {
+			position: relative;
+			color: $swatch-ltBlue;
+			
+			.month {
+				font-family: $font-secondary;
+				font-weight: bold;
+				text-transform: uppercase;
+				-webkit-transform: rotate(-90deg);
+				-moz-transform: rotate(-90deg);
+				-ms-transform: rotate(-90deg);
+				-o-transform: rotate(-90deg);
+				filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+				display: block;
+				position: absolute;
+				top: 0;
+				left: -5px;
+				font-size: 1.125em;
+				padding: 10px 0;
+			}
+			
+			.day {
+				font-family: $font-secondary;
+				font-weight: bold;
+				position: absolute;
+				top: 0;
+				left: 15px;
+				font-size: 2.75em;
+				padding-left: 5px;
+				padding-top: 8px;
+				text-align: right;
+				display: block;
+				min-width: 45px;
+			}
+			
+			.event a {
+				color: $swatch-ltBlue;
+				text-decoration: none;
+				
+				&:hover {
+					color: $color-link;
+					text-decoration: underline;
+				}
+			}
+			
+			.loc {
+				position: relative;
+				top: -5px;
+			}
+			
+			.event,
+			.loc {
+				margin-left: 70px;
+				font-size: .80em;
+			}
+		}
+	}	
 }
 
 #sidebar-blog {
@@ -253,6 +344,7 @@ $color-buttonHover: $gradient-primaryHover;
 	min-height: 400px;
 	position: relative;
 	box-sizing: border-box;
+	-moz-box-sizing: border-box;
 	
 	.nivo-controlNav {
 		position: absolute;
@@ -291,6 +383,7 @@ $color-buttonHover: $gradient-primaryHover;
 		left: 10px;
 		padding: 10px;
 		box-sizing: border-box;
+		-moz-box-sizing: border-box;
 		
 		a img {
 			position: absolute;
@@ -306,6 +399,7 @@ $color-buttonHover: $gradient-primaryHover;
 		.nivo-imageLink {
 			padding: 10px;
 			box-sizing: border-box;
+			-moz-box-sizing: border-box;
 		}
 	}
 	
@@ -333,8 +427,8 @@ $color-buttonHover: $gradient-primaryHover;
 	}
 }
 .social-icon-wrap {
-	float: left;
 	@include setContainerBackground(#000, 10px);
+	float: left;
 	margin: 45px 12px;		
 	
 	img:hover {
@@ -397,6 +491,7 @@ hr.top:after {
 	padding: 0;
 	margin: 0;
 	box-sizing: border-box;
+	-moz-box-sizing: border-box;
 }
 .nav-previous {	
 	float: left;
@@ -436,6 +531,7 @@ hr.top:after {
 }
 
 a.donate-badge {
+	@include setBackgroundGradient();
 	display: block;
 	text-align: center;
 	margin: 0px auto;
@@ -443,6 +539,7 @@ a.donate-badge {
 	border-radius: 50%;
 	height: 200px;
 	box-sizing: border-box;
+	-moz-box-sizing: border-box;
 	padding: 50px 35px 0;
 	color: #fff;
 	text-decoration: none;
@@ -451,11 +548,10 @@ a.donate-badge {
 	line-height: 1em;
 	font-weight: bold;
 	text-transform: uppercase;
-	background-image: $color-button;
 	box-shadow: inset 0px 1px 8px rgba(255,255,255,.8), inset 0px -2px 8px rgba(0,0,0,.9);
 	
 	&:hover {
-		background-image: $color-buttonHover;
+		@include setBackgroundGradientHover();
 		box-shadow: inset 0px 1px 8px rgba(255,255,255,.8), inset 0px -2px 8px rgba(0,0,0,.3);
 	}
 	
@@ -484,16 +580,16 @@ a.donate-badge {
 	}
 	
 	.button {
+		@include setBackgroundGradient();
 		font-style: italic;
 		color: #fff;
 		text-decoration: none;
-		background-image: $color-button;
 		padding: 10px 20px;
 		border-radius: 4px;
 		
 		&:hover {
+			@include setBackgroundGradientHover();
 			color: #fff;
-			background-image: $color-buttonHover;
 		}	
 		
 		&:active, &:visited {
@@ -527,10 +623,12 @@ a.donate-badge {
 
 img.alignright {
 	float: right;
+	margin-left: 10px;
 }
 
 img.alignleft {
 	float: left;
+	margin-right: 10px;
 }
 	
 	

@@ -19,7 +19,7 @@ h2.tribe-events-cal-title {
 h2.tribe-events-cal-title a {
 	color: inherit !important;
 }
-.tribe-events-month-nav a, .events-archive .entry-title a, .tribe-events-nav a, .back a, .eventsListWidget .dig-in a, .eventsAdvancedListWidget .dig-in a {
+.tribe-events-month-nav a, .events-archive .entry-title a, .tribe-events-nav a, .back a {
 	color:$color-link !important;
 	&:visited {
 		color: $color-link !important;
@@ -29,6 +29,23 @@ h2.tribe-events-cal-title a {
 	}
 	&:active {
 		color: $color-linkActive !important;
+	}
+}
+
+.eventsListWidget .dig-in a, .eventsAdvancedListWidget .dig-in a {
+	&,
+	&:active,
+	&:visited {
+		color: $swatch-ltBlue !important;
+		font-size: .8em !important;
+	}
+	
+	&:hover {
+		color: $color-link !important;
+	}
+	
+	&:after {
+		content: ' \203A';
 	}
 }
 

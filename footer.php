@@ -14,7 +14,7 @@
 	<section class="copyrights">
 		<div class="container">
 			<div class="col10">
-				<p>&copy; 2013 Join Together Northern Nevada 505 S. Arlington, Suite 110, Reno NV 89509</p>
+				<p>&copy; <?php echo date("Y"); ?> Join Together Northern Nevada 505 S. Arlington, Suite 110, Reno NV 89509</p>
 			</div>
 			
 			<div class="col2">

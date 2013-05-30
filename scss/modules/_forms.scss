@@ -10,7 +10,8 @@
 		padding: 3px 5px;
 		border: 2px solid transparent;
 		border-radius: 4px;
-		box-sizing: border-box;
+		box-sizing: border-box;		
+		-moz-box-sizing: border-box;
 		font-family: $font-primary;
 		color: $swatch-jtnnBlue;
 			
@@ -20,8 +21,7 @@
 		}
 		
 		&[type=submit]{
-			background-color: $swatch-jtnnBlue;
-			background-image: $color-button;
+			@include setBackgroundGradient();
 			outline: none;
 			border: none;
 			color: #fff;
@@ -35,8 +35,7 @@
 			box-shadow: inset 0px 1px 0px rgba(#30baff,.35);
 			
 			&:hover {
-				background-color: lighten($swatch-jtnnBlue, 20%);
-				background-image: $color-buttonHover;
+				@include setBackgroundGradientHover();
 				box-shadow: inset 0px 1px 0px rgba(#fff,.35);
 			}
 		}

@@ -276,12 +276,11 @@ class jtnn_newsletter extends WP_Widget
  
     // WIDGET CODE GOES HERE
     ob_start(); 
-    ?>
+    ?>    
     
     <label for="subscribe"><?php echo $instance['title']; ?></label>
-    <input type="email" name="subscribe" id="subscribe" placeholder="enter your email address" />
-	<input type="submit" value="subscribe" />
 
+    <?php echo do_shortcode('[contact-form-7 id="501" title="Newsletter Signup"]'); ?>
  
 	<?php 
 	$layout = ob_get_contents();
