@@ -8,7 +8,7 @@
 	input,
 	textarea{
 		padding: 3px 5px;
-		border: 2px solid transparent;
+		border: 2px solid #fff;
 		border-radius: 4px;
 		box-sizing: border-box;		
 		-moz-box-sizing: border-box;
@@ -41,7 +41,7 @@
 		}
 		
 		&[type=reset]{
-			background-color: $swatch-disabledGrey;
+			background-color: $swatch-lightGrey;
 			outline: none;
 			border: none;
 			color: #fff;
@@ -54,7 +54,7 @@
 			top: -1px;
 			
 			&:hover {
-				background-color: lighten($swatch-disabledGrey, 5%);
+				background-color: lighten($swatch-lightGrey, 5%);
 			}
 		}
 	}
@@ -71,7 +71,7 @@
 	   Currently unable to target older versions of Opera as the spec was never introduced.
 	   Newer versions of Opera (running Webkit engine) will have styles applied */
 	::-webkit-input-placeholder {
-		color: $swatch-disabledGrey;
+		color: $swatch-mediumGrey;
 		font-size: .688em;
 		font-style: italic;
 		font-weight: 300;
@@ -80,7 +80,7 @@
 	}
 	
 	:-moz-placeholder { /* Firefox 18- */
-		color: $swatch-disabledGrey;
+		color: $swatch-mediumGrey;
 		font-size: .688em;
 		font-style: italic;
 		font-weight: 300;
@@ -89,7 +89,7 @@
 	}
 	
 	::-moz-placeholder {  /* Firefox 19+ */
-		color: $swatch-disabledGrey;
+		color: $swatch-mediumGrey;
 		font-size: .688em;
 		font-style: italic;
 		font-weight: 300;
@@ -98,7 +98,7 @@
 	}
 	
 	:-ms-input-placeholder {
-		color: $swatch-disabledGrey;
+		color: $swatch-mediumGrey;
 		font-size: .688em;
 		font-style: italic;
 		font-weight: 300;
@@ -111,13 +111,14 @@
 	/* Field Wrapper */
 	form.searchform,
 	.field-wrap {
+		background-color: $swatch-dkBlue2; /* Fallback */	
 		background-color: $color-formFieldBG;
 		border-radius: 4px;
 		padding: 5px;
 		box-sizing: border-box;
 		
 		& input[type=search] {
-			width: 216px;
+			width: 215px;
 		}
 	}
 	

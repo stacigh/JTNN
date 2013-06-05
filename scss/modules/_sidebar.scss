@@ -20,6 +20,7 @@
 	font-weight: bold;
 	font-size: 1.5em;
 	text-decoration: none;
+	background-color: $swatch-jtnnBlue; /* Fallback */
 	background-color: rgba($swatch-jtnnBlue, .85);
 	color: #fff;
 	line-height: 50px;
@@ -31,6 +32,7 @@
 	margin: 0;
 }
 .userbucket:hover span {
+	background-color: $swatch-jtnnBlue; /* Fallback */
 	background-color: rgba($swatch-jtnnBlue, .95);
 }
 
@@ -52,7 +54,7 @@
 	height: 29px !important;
 	
 	input[type=email] {
-		width: 525px;
+		width: 522px;
 	}
 }
 .newsletter .wpcf7 {
@@ -64,7 +66,7 @@
 	color: $swatch-jtnnBlue;
 }
 .newsletter input[type=email] {
-	width: 183px;
+	width: 177px;
 	margin-top: 12px;
 }
 @-moz-document url-prefix() {

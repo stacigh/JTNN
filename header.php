@@ -11,6 +11,7 @@
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
 <meta name="viewport" content="width=device-width" />
+<meta name="viewport" content="initial-scale=1">
 <title><?php wp_title( '|', true, 'right' ); ?></title>
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
@@ -21,6 +22,14 @@
 
 <!--[if lt IE 9]>
 <script src="<?php echo get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script>
+<![endif]-->
+
+<!--[if IE]>
+	<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/css/ie.css" />
+<![endif]-->
+
+<!--[if lte IE 8]>
+	<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/css/ie8.css" />
 <![endif]-->
 
 <?php wp_head(); ?>
@@ -43,8 +52,8 @@
 			</div>
 			
 			<div class="calls-to-action col6 clearfix">
-				<a href="http://localhost/about/get-involved/" title="Get involved" class="button flat secondary">Get Involved</a>
-	        	<a href="http://localhost/about/donate/" title="Donate" class="button flat">Donate</a>
+				<a href="<?php get_bloginfo('url'); ?>/about/get-involved/" title="Get involved" class="button flat secondary">Get Involved</a>
+	        	<a href="<?php get_bloginfo('url'); ?>/about/donate/" title="Donate" class="button flat">Donate</a>
 				<h6>Substance Abuse Help <span>775-825-HELP</span></h6>
 			</div>
 			

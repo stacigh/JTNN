@@ -50,7 +50,7 @@ get_header(); ?>
 <?php get_sidebar('horizontal'); ?>
 
 <section class="content container">
-	<article class="col8">
+	<article id="content-home" class="col8">
 		<hr class="news" />
 		
 		<?php // Get RSS Feed(s)

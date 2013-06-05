@@ -13,13 +13,13 @@ get_header(); ?>
 			
 			<span class="col4">
 				<?php get_search_form(); ?>
-			</div>
+			</span>
 		</div>
 	</section>
 	
 	<!-- article and sidebar -->
 	<section class="content container">
-		<article id="post-<?php the_ID(); ?>" <?php post_class('col8'); ?>>
+		<article id="post-<?php the_ID(); ?>" <?php post_class('col8 blog'); ?>>
 
 		<?php while ( have_posts() ) : the_post(); ?>
 

@@ -1,0 +1,19 @@
+form.searchform,
+.field-wrap,
+.newsletter, 
+.container-socialmedia,
+.newsletter-wrap {
+	background-color: #ccd3dc; /* 20% of dkBlue2 #012250 */	
+}
+
+form.searchform input[type=text] {
+	width: 225px;
+}
+
+.newsletter input[type=text] {
+	width: 175px;
+	margin-top: 12px;
+}
+.content .newsletter-wrap .wpcf7 input[type=text] {
+	width: 517px;
+}

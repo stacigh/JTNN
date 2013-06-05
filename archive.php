@@ -85,7 +85,7 @@ get_header(); ?>
 			
 			<span class="col4">
 				<?php get_search_form(); ?>
-			</div>
+			</span>
 		</div>
 	</section>
 	

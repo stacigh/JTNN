@@ -12,9 +12,9 @@ get_header(); ?>
 		<div class="container">
 			<h1 class="col8"><?php _e( 'We can&rsquo;t find that page...', 'jtnn' ); ?></h1>
 			
-			<div class="col4">
+			<span class="col4">
 				<?php get_search_form(); ?>
-			</div>
+			</span>
 		</div>
 	</section>
 	

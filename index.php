@@ -20,13 +20,13 @@ get_header(); ?>
 			
 			<span class="col4">
 				<?php get_search_form(); ?>
-			</div>
+			</span>
 		</div>
 	</section>
 	
 	<!-- article and sidebar -->
 	<section class="content container">
-		<article class="col8">
+		<article class="col8 blog">
 		
 		<?php if ( have_posts() ) : ?>
 
@@ -53,10 +53,7 @@ get_header(); ?>
 		
 		</article>
 		
-		
-		<aside class="col4">
-			<?php get_sidebar(); ?>
-		</aside>
+		<?php get_sidebar(); ?>
 	</section>		
 
 <?php get_footer(); ?>

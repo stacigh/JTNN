@@ -7,7 +7,7 @@
 ?>
 
 <!-- Homepage Sidebar -->
-<aside class="col4">
+<aside id="sidebar-home" class="col4">
 	<?php do_action( 'before_sidebar' ); ?>
 	<?php if ( ! dynamic_sidebar( 'sidebar-homepage' ) ) : ?>
 	

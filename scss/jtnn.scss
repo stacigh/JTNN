@@ -18,9 +18,8 @@ $swatch-dkBlue2: #012250;
 $swatch-dkBlue3: #134a94;
 $swatch-jtnnBlue: #073e88;
 $swatch-jtnnOrange: #ffb61a;
-$swatch-disabledGrey: rgb(217,217,217);
-$swatch-mediumGrey: rgb(205,205,205);
-$swatch-lightGrey: rgb(235,235,235);
+$swatch-lightGrey: #cdcdcd;
+$swatch-mediumGrey: #999999;
 $swatch-highlightBlue: #23b1ff;
 
 // Gradients
@@ -38,7 +37,7 @@ $color-text: $swatch-mdBlue;
 $color-link: $swatch-highlightBlue;
 $color-linkHover: $color-text;
 $color-linkActive: lighten($color-link, 25%);
-$color-formFieldBG: rgba($swatch-lightGrey, .35);
+$color-formFieldBG: rgba($swatch-lightGrey, 1);
 
 $color-button: $gradient-primary;
 $color-buttonHover: $gradient-primaryHover;
@@ -65,18 +64,19 @@ $color-buttonHover: $gradient-primaryHover;
 
 @mixin setBackgroundGradient($from: #185cae, $to: #0e387a, $fallback: $swatch-jtnnBlue) {
     background: $to;
-    background: url($fallback);
+    background: $fallback;
     background: -moz-linear-gradient(top, $from 0%, $to 100%);
     background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$from), color-stop(100%,$to));
     background: -webkit-linear-gradient(top, $from 0%,$to 100%);
     background: -o-linear-gradient(top, $from 0%,$to 100%);
     background: -ms-linear-gradient(top, $from 0%,$to 100%);
     background: linear-gradient(to bottom, $from 0%,$to 100%);
+       
 }
 
 @mixin setBackgroundGradientReversed($from: #0e387a, $to: #185cae, $fallback: $swatch-jtnnBlue) {
     background: $to;
-    background: url($fallback);
+    background: $fallback;
     background: -moz-linear-gradient(top, $from 0%, $to 100%);
     background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$from), color-stop(100%,$to));
     background: -webkit-linear-gradient(top, $from 0%,$to 100%);
@@ -87,7 +87,7 @@ $color-buttonHover: $gradient-primaryHover;
 
 @mixin setBackgroundGradientHover($from: #2cc4ff, $to: #1a9eff, $fallback: $swatch-highlightBlue) {
     background: $to;
-    background: url($fallback);
+    background: $fallback;
     background: -moz-linear-gradient(top, $from 0%, $to 100%);
     background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$from), color-stop(100%,$to));
     background: -webkit-linear-gradient(top, $from 0%,$to 100%);
@@ -119,9 +119,6 @@ $color-buttonHover: $gradient-primaryHover;
 
 
 
-
-
-
 /* NEED TO REORGANIZE EVERYTHING BELOW THIS LINE */
 
 	
@@ -129,7 +126,7 @@ $color-buttonHover: $gradient-primaryHover;
 // ------------------------------------------------	
 
 .hero {
-	background: url(../img/bg-blue.png);
+	background: $swatch-jtnnBlue url(../img/bg-blue.png) repeat;
 	border-top: 5px solid $swatch-dkBlue2;
 	border-bottom: 5px solid $swatch-dkBlue2;
 	// height: 457px;
@@ -424,8 +421,15 @@ $color-buttonHover: $gradient-primaryHover;
 		top: 200px;
 		right: -20px;
 		z-index: 10;
-	}
+	}	
 }
+
+	@media screen and (max-width: 1000px){
+		.hero-social-banner {
+			display: none;
+		}
+	}
+
 .social-icon-wrap {
 	@include setContainerBackground(#000, 10px);
 	float: left;
@@ -447,20 +451,6 @@ hr.news:before {
 	text-shadow: 0px 1px 0px #fff;
 	position: relative;
 	top: -25px;
-	font-family: $font-secondary;
-	font-weight: bold;
-	letter-spacing: 1px;
-	font-size: .85em;
-	text-transform: uppercase;
-	
-}
-hr.top:after {
-	content: "Top";
-	color: $swatch-mediumGrey;
-	text-shadow: 0px 1px 0px #fff;
-	position: relative;
-	top: -25px;
-	left: 900px;
 	font-family: $font-secondary;
 	font-weight: bold;
 	letter-spacing: 1px;
@@ -654,11 +644,145 @@ img.alignleft {
 
 
 
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen 
+//and (min-device-width : 320px)
+//and (max-device-width : 600px) 
+and (min-width: 320px)
+and (max-width: 600px)
 
+{
+	.hero-youtube,
+	.hero-social,
+	.widget_recent_entries,
+	.widget_archive,
+	#sidebar-home,
+	#secondary {
+		display: none;
+	}
+	.hero-slideshow {
+		float: none !important;
+		width: 650px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	#content-home,
+	.content.container .col8,
+	#sidebar-blog,
+	#sidebar-blog .widget_categories {
+		float: none;
+		width: 940px;
+		display: block;
+	}
+	
+	#sidebar-blog {
+		padding-top: 25px;
+		width: 940px;
+		clear: both;
+		
+		.widget_categories {
+			li {
+				color: #fff;
+				display: inline-block;
+				border: none;
+				-webkit-box-shadow: none;
+				padding: 10px 8px;
+				margin: 5px 10px 5px 0;
+				background-color: $swatch-jtnnBlue;
+				
+				a {
+					color: #fff;
+				}
+			}
+		}
+	}
+	
+	
+	#sidebar-blog {
+		display: none;
+	}
+	
+	input:not([type=submit]),
+	textarea {
+		-webkit-appearance: none;
+	}
+	form.searchform input:not([type=submit]) {
+		width: 210px;
+	}
 
+}
 
+/* Smartphones (landscape) ----------- */
+@media only screen 
+and (min-width : 321px) {
+/* Styles */
+}
+
+/* Smartphones (portrait) ----------- */
+@media only screen 
+and (max-width : 320px) {
+/* Styles */
+}
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) {
+/* Styles */
+}
+
+/* iPads (landscape) ----------- */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (orientation : landscape) {
+
+	input:not([type=submit]),
+	textarea {
+		-webkit-appearance: none;
+	}
+	form.searchform input:not([type=submit]) {
+		width: 210px;
+	}
+	
+}
+
+/* iPads (portrait) ----------- */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (orientation : portrait) {
+
+	input:not([type=submit]),
+	textarea {
+		-webkit-appearance: none;
+	}
+	form.searchform input:not([type=submit]) {
+		width: 210px;
+	}
+
+}
+
+/* Desktops and laptops ----------- */
+@media only screen 
+and (min-width : 1224px) {
+/* Styles */
+}
+
+/* Large screens ----------- */
+@media only screen 
+and (min-width : 1824px) {
+/* Styles */
+}
+
+/* iPhone 4 ----------- */
+@media
+only screen and (-webkit-min-device-pixel-ratio : 1.5),
+only screen and (min-device-pixel-ratio : 1.5) {
 
 	
+
+}
 	
 	
 	
