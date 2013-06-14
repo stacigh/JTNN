@@ -24,7 +24,6 @@ get_header(); ?>
 			</span>
 		</div>
 	</section>
-	
 	<!-- article and sidebar -->
 	<section class="content container">
 		<article id="post-<?php the_ID(); ?>" <?php post_class('col8'); ?>>

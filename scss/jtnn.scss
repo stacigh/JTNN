@@ -180,6 +180,14 @@ $color-buttonHover: $gradient-primaryHover;
 	}
 }
 
+// Gallery Captions
+dd.wp-caption-text {
+	font-size: .65em;
+	font-weight: bold;
+	font-style: italic;
+	line-height: 1.25em;
+	padding: 5px 12px;
+}
 
 // Main Content Area
 .content {

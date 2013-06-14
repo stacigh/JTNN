@@ -369,3 +369,9 @@ function custom_login_logo() {
 	</style>';
 }
 add_action('login_head', 'custom_login_logo');
+
+// Change attachment size to JTNN Hero (full width)
+add_filter('prepend_attachment', 'ag_prepend_attachment');
+function ag_prepend_attachment($p) {
+    return '<p class="attachment">'.wp_get_attachment_link(0, 'JTNN Hero', false).'</p>';
+}
