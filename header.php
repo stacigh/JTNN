@@ -54,7 +54,7 @@
 			<div class="calls-to-action col6 clearfix">
 				<a href="<?php get_bloginfo('url'); ?>/about/get-involved/" title="Get involved" class="button flat secondary">Get Involved</a>
 	        	<a href="<?php get_bloginfo('url'); ?>/about/donate/" title="Donate" class="button flat">Donate</a>
-				<h6>Substance Abuse Help <span>775-825-HELP</span></h6>
+				<h5>Substance Abuse Help <span>775-825-HELP</span></h5>
 			</div>
 			
 			<div class="col12 navigation">

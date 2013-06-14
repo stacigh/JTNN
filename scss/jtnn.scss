@@ -19,7 +19,7 @@ $swatch-dkBlue3: #134a94;
 $swatch-jtnnBlue: #073e88;
 $swatch-jtnnOrange: #ffb61a;
 $swatch-lightGrey: #cdcdcd;
-$swatch-mediumGrey: #999999;
+$swatch-mediumGrey: #777777;
 $swatch-highlightBlue: #23b1ff;
 
 // Gradients
@@ -385,7 +385,8 @@ $color-buttonHover: $gradient-primaryHover;
 		a img {
 			position: absolute;
 			top: 10px !important;
-			left: 10px !important;
+			left: 10px !important;width: 630px !important;
+			height: 354px !important;
 		}
 		
 		.nivo-slice {
@@ -398,11 +399,6 @@ $color-buttonHover: $gradient-primaryHover;
 			box-sizing: border-box;
 			-moz-box-sizing: border-box;
 		}
-	}
-	
-	img {
-		width: 630px !important;
-		height: 354px !important;
 	}
 }
 .hero-slideshow,
@@ -454,11 +450,22 @@ hr.news:before {
 	font-family: $font-secondary;
 	font-weight: bold;
 	letter-spacing: 1px;
-	font-size: .85em;
+	font-size: 1em;
 	text-transform: uppercase;
 }
 
-
+.read-more-feed {
+	color: $swatch-mediumGrey;
+	text-shadow: 0px 1px 0px #fff;
+	font-family: $font-secondary;
+	font-weight: bold;
+	letter-spacing: 1px;
+	font-size: 1em;
+	text-transform: uppercase;
+	border-top: 1px solid $swatch-mediumGrey;
+	box-shadow: inset 0px 1px 0px #fff;
+	text-align: right;
+}
 
 
 
@@ -466,7 +473,7 @@ hr.news:before {
 	text-align: right;
 	padding-top: 50px;
 	
-	h6 {
+	h5 {
 		margin-top: 25px;
 	}
 }
@@ -531,7 +538,7 @@ a.donate-badge {
 	box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	padding: 50px 35px 0;
-	color: #fff;
+	color: $swatch-jtnnOrange;
 	text-decoration: none;
 	font-family: $font-secondary;
 	font-size: 2em;
@@ -550,6 +557,7 @@ a.donate-badge {
 		font-weight: normal;
 		font-size: .75em;
 		padding-top: 10px;
+		color: #fff;
 	}
 }
 
@@ -563,8 +571,8 @@ a.donate-badge {
 	}
 	
 	.button-container {
+		@include setContainerBackground($swatch-lightGrey, 10px);
 		display: inline-block;
-		background-color: $color-formFieldBG;
 		border-radius: 6px;
 		padding: 13px 5px;
 	}
@@ -636,7 +644,7 @@ img.alignleft {
 	}	
 	
 	header img {
-		margin: 35px 0;
+		margin: 47px 0;
 	}
 
 

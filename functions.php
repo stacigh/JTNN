@@ -361,3 +361,11 @@ function jtnn_scripts() {
 
 }
 add_action( 'wp_enqueue_scripts', 'jtnn_scripts' );
+
+// custom admin login logo
+function custom_login_logo() {
+	echo '<style type="text/css">
+	h1 a { background-image: url('.get_bloginfo('template_directory').'/img/logo-jtnn-loginpage.png) !important; background-size: 326px 67px !important; }
+	</style>';
+}
+add_action('login_head', 'custom_login_logo');

@@ -49,6 +49,7 @@
 }
 .newsletter-wrap {
 	@include setContainerBackground($swatch-lightGrey, 10px);
+	margin-bottom: 20px;
 }
 .content .newsletter-wrap .wpcf7 {
 	height: 29px !important;

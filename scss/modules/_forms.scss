@@ -111,8 +111,8 @@
 	/* Field Wrapper */
 	form.searchform,
 	.field-wrap {
-		background-color: $swatch-dkBlue2; /* Fallback */	
-		background-color: $color-formFieldBG;
+		@include setContainerBackground($swatch-lightGrey, 10px);
+		
 		border-radius: 4px;
 		padding: 5px;
 		box-sizing: border-box;

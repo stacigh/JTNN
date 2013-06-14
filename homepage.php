@@ -2,6 +2,13 @@
 /* Template Name: Home page */
 get_header(); ?>
 
+<?php
+global $wp_query;
+$postid = $wp_query->post->ID;
+$youtube = get_post_meta($postid, 'youtube-video-id', true);
+wp_reset_query();
+?>
+
 <section class="hero homepage">
 	<div class="container">
 		<div class="hero-slideshow">
@@ -9,7 +16,7 @@ get_header(); ?>
 		</div>
 		
 		<div class="hero-youtube">
-			<iframe width="260" height="147" src="http://www.youtube.com/embed/eYpu_qY6JOI" frameborder="0" allowfullscreen></iframe>
+			<iframe width="260" height="147" src="http://www.youtube.com/embed/<?php echo $youtube ?>" frameborder="0" allowfullscreen></iframe>
 		</div>
 		
 		<div class="hero-social-banner">
@@ -62,7 +69,7 @@ get_header(); ?>
 		if ( ! is_wp_error( $rss ) ) : // Checks that the object is created correctly
 		
 		    // Figure out how many total items there are, but limit it to 5. 
-		    $maxitems = $rss->get_item_quantity( 3 ); 
+		    $maxitems = $rss->get_item_quantity( 2 ); 
 		
 		    // Build an array of all the items, starting with element 0 (first element).
 		    $rss_items = $rss->get_items( 0, $maxitems );
@@ -98,6 +105,8 @@ get_header(); ?>
 	      
 	        <?php endforeach; ?>
 	    <?php endif; ?>
+	    
+	    <p class="read-more-feed">Read more news at <a href="http://www.drugfree.org/join-together" title="Drugfree.org" target="_blank">Drugfree.org</a>
 		
 	</article>
 	
