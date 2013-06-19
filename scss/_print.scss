@@ -1,0 +1,15 @@
+/* Print Styles  ----------- */
+@media print {
+	nav,
+	.calls-to-action,
+	.navigation,
+	section.copyrights,
+	section.footer,
+	aside,
+	.widget-area,
+	.container-socialmedia,
+	#searchform 
+	{
+		display: none;
+	}
+}

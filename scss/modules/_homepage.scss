@@ -1,0 +1,153 @@
+// Hero Section
+// ------------------------------------------------	
+
+	.hero {
+		background: $swatch-jtnnBlue url(../img/bg-blue.png) repeat;
+		border-top: 5px solid $swatch-dkBlue2;
+		border-bottom: 5px solid $swatch-dkBlue2;
+		// height: 457px;
+		box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		padding-top: 20px;
+		padding-bottom: 20px;
+		margin-bottom: 50px;
+		color: #fff;
+		
+		&.homepage {
+			margin-bottom: 0;
+		}
+		
+		form {
+			@include setContainerBackground(#000, 5px);
+		}
+		
+		&.footer {
+			height: auto;
+			padding-bottom: 20px;
+			margin: 0;
+			
+			.text-button {
+				margin: 3.5em 0 0;
+			
+				&:hover span {
+					color: $color-link;
+					cursor: pointer;
+				}
+			
+				a {
+					color: #edf5ff !important;
+					font-style: italic;
+					font-weight: normal;
+					font-size: 1.125em;
+					text-decoration: none;
+					
+					span {
+						font-family: $font-secondary;
+						font-weight: bold;
+						font-style: normal;
+						padding-top: 5px;
+						display: inline-block;
+						font-size: 1.5em;
+						text-transform: uppercase;
+						color: $swatch-jtnnOrange;
+					}
+				}
+			}
+		}
+	}
+	
+	// More Hero Area Stuff	
+	.hero-slideshow,
+	.hero-youtube {
+		float: left;
+	}
+	.hero-youtube {
+		margin-top: 40px;
+		@include setContainerBackground(#000, 10px 10px 2px 10px );
+	}
+	.hero-social-banner {
+		position: relative;	
+		
+		img {
+			position: absolute;
+			top: 200px;
+			right: -20px;
+			z-index: 10;
+		}	
+	}
+	// Remove the social banner on mobile layouts
+	@media screen and (max-width: 1000px){
+		.hero-social-banner {
+			display: none;
+		}
+	}
+	
+	.social-icon-wrap {
+		@include setContainerBackground(#000, 10px);
+		float: left;
+		margin: 45px 12px;		
+		
+		img:hover {
+		    filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale"); /* Firefox 10+, Firefox on Android */
+		    filter: gray; /* IE6-9 */
+		    -webkit-filter: grayscale(100%); /* Chrome 19+, Safari 6+, Safari 6+ iOS */
+	    }
+	}
+	
+	// Main Content Area
+	.content {
+		padding-bottom: 50px;
+	}
+	.container.home-intro {
+		margin-bottom: 15px;
+	}
+	
+	
+	// Feed
+	.jtfeed {
+		margin-bottom: 50px;
+		
+		&:last-of-type {
+			margin-bottom: 0;
+		}
+		
+		h3 {
+			margin-top: 0;
+			
+			a {
+				text-decoration: none;
+			    color: lighten($color-headingDark, 8%);
+			    
+				&:hover {
+					color: $color-link;
+				}
+			}
+		}
+	}
+	
+	// HR 
+	hr.news:before {
+		content: "Latest News";
+		color: $swatch-mediumGrey;
+		text-shadow: 0px 1px 0px #fff;
+		position: relative;
+		top: -25px;
+		font-family: $font-secondary;
+		font-weight: bold;
+		letter-spacing: 1px;
+		font-size: 1em;
+		text-transform: uppercase;
+	}
+	
+	.read-more-feed {
+		color: $swatch-mediumGrey;
+		text-shadow: 0px 1px 0px #fff;
+		font-family: $font-secondary;
+		font-weight: bold;
+		letter-spacing: 1px;
+		font-size: 1em;
+		text-transform: uppercase;
+		border-top: 1px solid $swatch-mediumGrey;
+		box-shadow: inset 0px 1px 0px #fff;
+		text-align: right;
+	}

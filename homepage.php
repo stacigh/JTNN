@@ -20,20 +20,20 @@ wp_reset_query();
 		</div>
 		
 		<div class="hero-social-banner">
-			<img src="<?php echo get_template_directory_uri(); ?>/img/banner-subscribe.png" title="JTNN on YouTube">
+			<img src="<?php echo get_template_directory_uri(); ?>/img/banner-subscribe.png" alt="JTNN Social Media: Connect with us" title="JTNN Social Media: Connect with us">
 		</div>
 		
 		<div class="hero-social">
 			<div class="social-icon-wrap">
-				<a href="https://www.facebook.com/pages/Join-Together-Northern-Nevada/171403951769" title="JTNN on Facebook" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/img/facebook-48.png" title="JTNN on Facebook"></a>
+				<a href="https://www.facebook.com/pages/Join-Together-Northern-Nevada/171403951769" title="JTNN on Facebook" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/img/facebook-48.png" title="JTNN on Facebook" alt="JTNN on Facebook"></a>
 			</div>
 			
 			<div class="social-icon-wrap">
-				<a href="https://twitter.com/jointogetherNV" title="JTNN on Twitter" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/img/twitter-48.png" title="JTNN on Twitter"></a>
+				<a href="https://twitter.com/jointogetherNV" title="JTNN on Twitter" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/img/twitter-48.png" title="JTNN on Twitter" alt="JTNN on Twitter"></a>
 			</div>
 			
 			<div class="social-icon-wrap">
-				<a href="http://www.youtube.com/jtnorthernnevada" title="JTNN on YouTube" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/img/youtube-48.png" title="JTNN on YouTube"></a>
+				<a href="http://www.youtube.com/jtnorthernnevada" title="JTNN on YouTube" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/img/youtube-48.png" title="JTNN on YouTube" alt="JTNN on YouTube"></a>
 			</div>
 		</div>
 		

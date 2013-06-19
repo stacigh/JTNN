@@ -15,6 +15,8 @@
 <title><?php wp_title( '|', true, 'right' ); ?></title>
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
+<link rel="shortcut icon" type="image/x-icon" href="<?php echo get_template_directory_uri(); ?>/favicon.ico">
+<link rel="apple-touch-icon" href="<?php echo get_template_directory_uri(); ?>/apple-touch-icon.png">
 
 <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/jtnn.css">
 <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic" type="text/css">
@@ -58,7 +60,7 @@
 			</div>
 			
 			<div class="col12 navigation">
-					<nav id="site-navigation col8" class="navigation-main" role="navigation">	
+					<nav id="site-navigation" class="navigation-main" role="navigation">	
 					<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'top-level' ) ); ?>
 				</nav><!-- #site-navigation -->
 			</div>

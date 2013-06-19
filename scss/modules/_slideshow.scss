@@ -1,0 +1,69 @@
+// Slideshow
+.slider-wrapper.theme-default {
+	width: 670px;
+	min-height: 400px;
+	position: relative;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	
+	.nivo-controlNav {
+		position: absolute;
+		bottom: -30px;
+		z-index: 5;
+		text-align: center;
+		padding: 12px 10px;
+		//outline: 1px solid lime;
+		width: 670px;
+		
+		a {
+			display:inline-block;
+			width:16px;
+			height:17px;
+			background:url(../img/radio-buttons.png) no-repeat;
+			background-position: top left;
+			border:0;
+			margin: 0 2px;
+			text-indent:-9999px;
+			
+			&:hover {
+				background-position: top center;
+			}
+			
+			&.active {
+				background-position:top right;
+			}
+		}
+	}
+	
+	.nivoSlider {
+		width: 650px;
+		height: 374px;
+		position: absolute;
+		top: 10px;
+		left: 10px;
+		padding: 10px;
+		box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		overflow: hidden;
+		
+		@include setContainerBackground(#000, 10px);
+		
+		a img {
+			position: absolute;
+			top: 10px !important;
+			left: 10px !important;width: 630px !important;
+			height: 354px !important;
+		}
+		
+		.nivo-slice {
+			top: 10px !important;
+			left: 10px !important;
+		}
+		
+		.nivo-imageLink {
+			padding: 10px;
+			box-sizing: border-box;
+			-moz-box-sizing: border-box;
+		}
+	}
+}

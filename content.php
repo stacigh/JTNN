@@ -5,7 +5,7 @@
 ?>
 
 		
-	<h2 class="entry-title"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
+	<h3 class="entry-title"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h3>
 	<?php jtnn_posted_on(); ?>
 	<?php the_excerpt(); ?>
 	<div class="button-container">

@@ -1,0 +1,26 @@
+// Header
+// ------------------------------------------------	
+	body {
+		background: url(../img/bg-light.png) repeat;
+		border-top: 5px solid $swatch-dkBlue3;
+	}
+	
+	
+	header img {
+		margin: 47px 0;
+	}
+	
+
+	.calls-to-action {
+		text-align: right;
+		padding-top: 50px;
+		
+		h5 {
+			margin-top: 25px;
+		}
+		
+		.button.flat {
+			padding: 12px 20px;
+			text-decoration: none;
+		}
+	}

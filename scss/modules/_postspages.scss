@@ -1,0 +1,110 @@
+// Post Title
+.entry-title {
+
+	a {
+		text-decoration: none;
+		color: lighten($color-headingDark, 8%);
+		
+		&:hover {
+			color: $color-link;
+		}
+	}
+}
+// Metadata styles
+.metadata {
+	color: $swatch-mediumGrey;
+	font-size: .75em;
+	font-style: italic;
+	margin-top: 0;
+}
+
+.navigation-paging {
+	margin-top: 1.5em;
+}
+
+.nav-previous,
+.nav-next {
+	width: 50%;
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+}
+.nav-previous {	
+	float: left;
+}
+.nav-next {
+	float: right;
+	color: lime !important;
+	text-align: right;
+}
+
+
+// Gallery Captions
+dd.wp-caption-text {
+	font-size: .65em;
+	font-weight: bold;
+	font-style: italic;
+	line-height: 1.25em;
+	padding: 5px 12px;
+}
+
+// Donate Badge
+a.donate-badge {
+	@include setBackgroundGradient();
+	display: block;
+	text-align: center;
+	margin: 0px auto;
+	width: 200px;
+	border-radius: 50%;
+	height: 200px;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	padding: 50px 35px 0;
+	color: $swatch-jtnnOrange;
+	text-decoration: none;
+	font-family: $font-secondary;
+	font-size: 2em;
+	line-height: 1em;
+	font-weight: bold;
+	text-transform: uppercase;
+	box-shadow: inset 0px 1px 8px rgba(255,255,255,.8), inset 0px -2px 8px rgba(0,0,0,.9);
+	
+	&:hover {
+		@include setBackgroundGradientHover();
+		box-shadow: inset 0px 1px 8px rgba(255,255,255,.8), inset 0px -2px 8px rgba(0,0,0,.3);
+	}
+	
+	span {
+		display: inline-block;
+		font-weight: normal;
+		font-size: .75em;
+		padding-top: 10px;
+		color: #fff;
+	}
+}
+
+// Image Alignments
+img.alignright {
+	float: right;
+	margin-left: 10px;
+}
+
+img.alignleft {
+	float: left;
+	margin-right: 10px;
+}
+
+/*	Youtube Gallery
+	----------------------------------------------- */
+	h5.ytctitle {
+		font-weight: normal !important;
+		font-size: 16px !important;
+		line-height: 1.25em !important;
+		
+		.ytclink {
+			text-decoration: none !important;
+		}
+	}
+
+	

@@ -67,6 +67,56 @@
 	  }
 	}
 	
+		.button-container {
+		@include setContainerBackground($swatch-lightGrey, 10px);
+		display: inline-block;
+		border-radius: 6px;
+		padding: 13px 5px;
+	}
+	
+	// Buttons
+	.button {
+		@include setBackgroundGradient();
+		font-style: italic;
+		color: #fff;
+		text-decoration: none;
+		padding: 10px 20px;
+		border-radius: 4px;
+		
+		&:hover {
+			@include setBackgroundGradientHover();
+			color: #fff;
+		}	
+		
+		&:active, &:visited {
+			color: #fff;
+		}	
+		
+		&.flat {
+			font-weight: 700;
+			font-style: normal;
+			font-family: $font-secondary;
+			text-transform: uppercase;
+			background-color: $swatch-jtnnOrange;
+			background-image: none;
+			border-radius: 0px;
+			
+			&:hover {
+				background-color: lighten($swatch-jtnnOrange, 20%);
+				color: #fff;
+			}
+			
+			&.flat.secondary{
+				background-color: $swatch-jtnnBlue;
+				
+				&:hover {
+					background-color: lighten($swatch-jtnnBlue, 20%);
+				}
+			}
+		}
+		
+	}	
+	
 	/* Placeholder Styles
 	   Currently unable to target older versions of Opera as the spec was never introduced.
 	   Newer versions of Opera (running Webkit engine) will have styles applied */
@@ -123,7 +173,6 @@
 	}
 	
 	/* Contact Form 7 Overrides */	
-	
 	div.wpcf7-response-output {
 		margin: 20px 0;
 		padding: 10px 15px;

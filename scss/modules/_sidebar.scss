@@ -1,92 +1,130 @@
-.userbucket {
-	display: block;
-	background-repeat: no-repeat;
-	height: 200px;
-	position: relative;
-	margin-bottom: 20px;
-	background-size: contain;
-}
-.userbucket.parent {
-	background-image: url('http://i.istockimg.com/file_thumbview_approve/11085198/2/stock-photo-11085198-young-family-having-fun-in-park.jpg');
-}
-.userbucket.youth {
-	background-image: url('http://i.istockimg.com/file_thumbview_approve/13589413/2/stock-photo-13589413-playful-friends.jpg');
-}
-.userbucket.community {
-	background-image: url('http://i.istockimg.com/file_thumbview_approve/10606864/2/stock-photo-10606864-hand-tower.jpg');
-}
-.userbucket span {
-	font-family: $font-secondary;
-	font-weight: bold;
-	font-size: 1.5em;
-	text-decoration: none;
-	background-color: $swatch-jtnnBlue; /* Fallback */
-	background-color: rgba($swatch-jtnnBlue, .85);
-	color: #fff;
-	line-height: 50px;
-	padding: 0px 20px;
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	margin: 0;
-}
-.userbucket:hover span {
-	background-color: $swatch-jtnnBlue; /* Fallback */
-	background-color: rgba($swatch-jtnnBlue, .95);
-}
+// Sidebar Stuff
+// ------------------------------------------------
 
-/*	Social & User Buckets
-	----------------------------------------------- */	
-.newsletter, .container-socialmedia  {
-	box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	padding: 20px;
-	background-color: $swatch-ltBlue3;
-	box-shadow: inset 0px 0px 5px rgba($swatch-jtnnBlue, .1);
-	border: 1px solid rgba($swatch-jtnnBlue, .15);
-	
-}
-.newsletter-wrap {
-	@include setContainerBackground($swatch-lightGrey, 10px);
-	margin-bottom: 20px;
-}
-.content .newsletter-wrap .wpcf7 {
-	height: 29px !important;
-	
-	input[type=email] {
-		width: 522px;
+	// User buckets
+	.userbucket {
+		display: block;
+		background-repeat: no-repeat;
+		height: 200px;
+		position: relative;
+		margin-bottom: 20px;
+		background-size: contain;
 	}
-}
-.newsletter .wpcf7 {
-	height: 45px !important;
-}
-.newsletter label {
-	font-style: italic;
-	font-size: 1em;
-	color: $swatch-jtnnBlue;
-}
-.newsletter input[type=email] {
-	width: 177px;
-	margin-top: 12px;
-}
-@-moz-document url-prefix() {
-	.newsletter input[type=email] {
-		width: 182px;
+	.userbucket.parent {
+		background-image: url('http://i.istockimg.com/file_thumbview_approve/11085198/2/stock-photo-11085198-young-family-having-fun-in-park.jpg');
 	}
-}
-.widget {	
-	margin-top: 15px;
-	margin-bottom: 15px;
-}
-
-.container-socialmedia {
-	position: relative;
-	top: 10px;
-	
-	p {
+	.userbucket.youth {
+		background-image: url('http://i.istockimg.com/file_thumbview_approve/13589413/2/stock-photo-13589413-playful-friends.jpg');
+	}
+	.userbucket.community {
+		background-image: url('http://i.istockimg.com/file_thumbview_approve/10606864/2/stock-photo-10606864-hand-tower.jpg');
+	}
+	.userbucket span {
+		font-family: $font-secondary;
+		font-weight: bold;
+		font-size: 1.5em;
+		text-decoration: none;
+		background-color: $swatch-jtnnBlue; /* Fallback */
+		background-color: rgba($swatch-jtnnBlue, .85);
+		color: #fff;
+		line-height: 50px;
+		padding: 0px 20px;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
 		margin: 0;
-		margin-bottom: 10px;
-		font-size: .80em;
 	}
-}
+	.userbucket:hover span {
+		background-color: $swatch-jtnnBlue; /* Fallback */
+		background-color: rgba($swatch-jtnnBlue, .95);
+	}
+
+
+	// Social & Newsletter	
+	.newsletter, .container-socialmedia  {
+		box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		padding: 20px;
+		background-color: $swatch-ltBlue3;
+		box-shadow: inset 0px 0px 5px rgba($swatch-jtnnBlue, .1);
+		border: 1px solid rgba($swatch-jtnnBlue, .15);
+		
+	}
+	.newsletter-wrap {
+		@include setContainerBackground($swatch-lightGrey, 10px);
+		margin-bottom: 20px;
+	}
+	.content .newsletter-wrap .wpcf7 {
+		height: 29px !important;
+		
+		input[type=email] {
+			width: 522px;
+		}
+	}
+	.newsletter .wpcf7 {
+		height: 45px !important;
+	}
+	.newsletter label {
+		font-style: italic;
+		font-size: 1em;
+		color: $swatch-jtnnBlue;
+	}
+	.newsletter input[type=email] {
+		width: 177px;
+		margin-top: 12px;
+	}
+	@-moz-document url-prefix() {
+		.newsletter input[type=email] {
+			width: 182px;
+		}
+	}
+	.widget {	
+		margin-top: 15px;
+		margin-bottom: 15px;
+	}
+	
+	.container-socialmedia {
+		position: relative;
+		top: 10px;
+		
+		p {
+			margin: 0;
+			margin-bottom: 10px;
+			font-size: .80em;
+		}
+	}
+
+	// Sidebar for the blog
+	#sidebar-blog {
+		h1.widget-title {
+			font-size: 1.1em;
+			color: $swatch-mdBlue2;
+			font-family: $font-secondary;
+			font-weight: bold;
+			text-transform: uppercase;
+			border-bottom: 1px solid $swatch-ltBlue2;
+			padding-bottom: .5em;
+		}
+		
+		ul {
+			list-style-type: none;
+			margin: 0;
+			
+			li {
+				padding: .5em 0;
+				border-bottom: 1px solid $swatch-ltBlue2;
+				box-shadow: 0px 1px 0px rgba(255,255,255,.5);
+				font-size: .85em;
+				
+				a {
+					text-decoration: none;
+					color: $swatch-mdBlue2;
+					
+					&:hover {
+						color: $color-link;
+					}
+				}
+			}
+		}
+	}

@@ -1,132 +1,133 @@
-/*	Navigation
-	----------------------------------------------- */
+// Navigation
+// ------------------------------------------------	
 	
-// Force Navigation to be on top of everything
-#menu-global-nav {
-	z-index:2000;
-}
-
-.navigation {
-	margin-bottom: 20px;
-}
-		
-/* First level */
-nav ul {
-	@include setBackgroundGradient();
-	
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: .75em;
-	font-weight: bold;
-	text-align: left;
-	text-shadow: 0px 1px 0px rgba(0,0,0,.75);
-	text-transform: uppercase;
-	padding: 0 15px;
-	border-radius: 4px;  
-	list-style: none;
-	position: relative;
-	display: inline-table;
-	margin: 0;
-	
-	&.top-level {
-		width: 100%;
-		box-sizing: border-box;
-		-moz-box-sizing: border-box;
+	// Force Navigation to be on top of everything
+	#menu-global-nav {
+		z-index:2000;
 	}
 	
-	&:after {
-		content: ""; clear: both; display: block;
-		}
-	
-	> li {
-		&:first-of-type {
-			box-shadow: -1px 0px 0px rgba(0,0,0,.5);
-			}
-	
-		&:last-of-type {
-			box-shadow: 1px 0px 0px rgba(255,255,255,.1);
-			}
+	.navigation {
+		margin-bottom: 20px;
 	}
-}
-
-nav ul li {
-	float: left;
-	
-	a {
-		display: block; 
-		padding: 6px 15px;
-		color: #ffffff !important; 
-		text-decoration: none;					
-		border-style: solid;
-		border-width: 1px;
-		border-left-color: #094ea6; /* Fallback */
-		border-right-color: #0a3166;  /* Fallback */
-		border-left-color: rgba(255,255,255,.1);
-		border-right-color: rgba(0,0,0,.5);
-		border-bottom: none;
-		border-top: none;
-		}
-	
-	&:hover {		
-		@include setBackgroundGradientReversed();
-		
-		& > ul {
-			display: block;
-			}
-		
-		a {
-			color: #fff;
-			}
-		}
-}
-
-/* Second Level */
-	nav ul ul {
-	display: none;
-	background: #185cae; 
-	border-radius: 0px; 
-	padding: 0;
-	position: absolute; 
-	top: 100%;
-	font-size: 1em;
-	
-	> li {
-		&:first-of-type {
-			box-shadow: none;
-			}
-		
-		&:last-of-type {
-			box-shadow: none;
-			}
-		}
-	
-	li{
-		float: none; 
-		border-top: 1px solid rgba(0,0,0,.4);
-		position: relative;
-		
-		&:first-of-type {
-			border-top: none;
-			}
-		
-		&:hover {
-			background-image: none;
-			background-color: rgba(0,0,0,.25);
-			}
-		
-		a {
-			padding: 3px 30px;
-			color: #fff;
-			border: none;
 			
-			:hover {
-				background: #4b545f;
-				background-image: none;
+	/* First level */
+	nav ul {
+		@include setBackgroundGradient();
+		
+		font-family: Arial, Helvetica, sans-serif;
+		font-size: .75em;
+		font-weight: bold;
+		text-align: left;
+		text-shadow: 0px 1px 0px rgba(0,0,0,.75);
+		text-transform: uppercase;
+		padding: 0 15px;
+		border-radius: 4px;  
+		list-style: none;
+		position: relative;
+		display: inline-table;
+		margin: 0;
+		
+		&.top-level {
+			width: 100%;
+			box-sizing: border-box;
+			-moz-box-sizing: border-box;
+		}
+		
+		&:after {
+			content: ""; clear: both; display: block;
+		}
+		
+		> li {
+			&:first-of-type {
+				box-shadow: -1px 0px 0px rgba(0,0,0,.5);
+			}
+		
+			&:last-of-type {
+				box-shadow: 1px 0px 0px rgba(255,255,255,.1);
+			}
+		}
+		
+		li {
+			float: left;
+			
+			a {
+				display: block; 
+				padding: 6px 15px;
+				color: #ffffff !important; 
+				text-decoration: none;					
+				border-style: solid;
+				border-width: 1px;
+				border-left-color: #094ea6; /* Fallback */
+				border-right-color: #0a3166;  /* Fallback */
+				border-left-color: rgba(255,255,255,.1);
+				border-right-color: rgba(0,0,0,.5);
+				border-bottom: none;
+				border-top: none;
+			}
+			
+			&:hover {		
+				@include setBackgroundGradientReversed();
+				
+				& > ul {
+					display: block;
+					}
+				
+				a {
+					color: #fff;
+					}
+			}
+		}
+	}
+
+	
+	/* Second Level */
+		nav ul ul {
+		display: none;
+		background: #185cae; 
+		border-radius: 0px; 
+		padding: 0;
+		position: absolute; 
+		top: 100%;
+		font-size: 1em;
+		
+		> li {
+			&:first-of-type {
+				box-shadow: none;
+				}
+			
+			&:last-of-type {
+				box-shadow: none;
 				}
 			}
-		}
-	
-	/* Third level */
-	ul {
-		position: absolute; left: 100%; top:0px;
-		}
-}
+		
+		li{
+			float: none; 
+			border-top: 1px solid rgba(0,0,0,.4);
+			position: relative;
+			
+			&:first-of-type {
+				border-top: none;
+				}
+			
+			&:hover {
+				background-image: none;
+				background-color: rgba(0,0,0,.25);
+				}
+			
+			a {
+				padding: 3px 30px;
+				color: #fff;
+				border: none;
+				
+				:hover {
+					background: #4b545f;
+					background-image: none;
+					}
+				}
+			}
+		
+		/* Third level */
+		ul {
+			position: absolute; left: 100%; top:0px;
+			}
+	}

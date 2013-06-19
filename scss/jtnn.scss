@@ -1,808 +1,120 @@
 // Variables
 // ------------------------------------------------
 
-// Fonts
-$font-primary: 'Droid Serif', serif;
-$font-secondary: 'Open Sans Condensed', sans-serif;
-$font-icon: 'Entypo';
-
-
-// Swatches    dce4ef
-$swatch-ltBlue: #edf5ff;
-$swatch-ltBlue2: #b1c8e8; 
-$swatch-ltBlue3: #f3f6fa;
-$swatch-mdBlue: #25589c;
-$swatch-mdBlue2: #2868be;
-$swatch-dkBlue: #466ca4;
-$swatch-dkBlue2: #012250;
-$swatch-dkBlue3: #134a94;
-$swatch-jtnnBlue: #073e88;
-$swatch-jtnnOrange: #ffb61a;
-$swatch-lightGrey: #cdcdcd;
-$swatch-mediumGrey: #777777;
-$swatch-highlightBlue: #23b1ff;
-
-// Gradients
-$gradient-primary: -webkit-linear-gradient(#185cae 0%, #0e387a 100%);
-$gradient-primaryReversed: -webkit-linear-gradient(#185cae 100%, #0e387a 0%);
-$gradient-primaryHover: -webkit-linear-gradient(#2cc4ff 0%, #1a9eff 100%); 
-
-
-// Swatches applied as colors
-$color-headingTextLight: $swatch-ltBlue;
-$color-headingTextDark: $swatch-dkBlue;
-$color-headingLight: $swatch-ltBlue;
-$color-headingDark: $swatch-mdBlue2;
-$color-text: $swatch-mdBlue;
-$color-link: $swatch-highlightBlue;
-$color-linkHover: $color-text;
-$color-linkActive: lighten($color-link, 25%);
-$color-formFieldBG: rgba($swatch-lightGrey, 1);
-
-$color-button: $gradient-primary;
-$color-buttonHover: $gradient-primaryHover;
+	// Fonts
+	$font-primary: 'Droid Serif', serif;
+	$font-secondary: 'Open Sans Condensed', sans-serif;
+	
+	
+	// Swatches and number of times used throughout the site.
+	$swatch-ltBlue: #edf5ff; // 5
+	$swatch-ltBlue2: #b1c8e8; // 2
+	$swatch-ltBlue3: #f3f6fa; // 1
+	$swatch-mdBlue: #25589c; // 1
+	$swatch-mdBlue2: #2868be; // 4
+	$swatch-dkBlue: #466ca4; // 2
+	$swatch-dkBlue2: #012250; // 2
+	$swatch-dkBlue3: #134a94; // 1
+	$swatch-jtnnBlue: #073e88; // 16
+	$swatch-jtnnOrange: #ffb61a; // 5
+	$swatch-lightGrey: #cdcdcd; // 6
+	$swatch-mediumGrey: #777777; // 9
+	$swatch-highlightBlue: #23b1ff; // 3 
+	
+	
+	// Swatches applied as colors
+	$color-headingDark: $swatch-mdBlue2; // 2
+	$color-text: $swatch-mdBlue; // 2
+	$color-link: $swatch-highlightBlue; // 11
+	$color-linkHover: $color-text; // 2
+	$color-linkActive: lighten($color-link, 25%); // 2
 	
 	
 // Mixins
 // ------------------------------------------------	
 
-@mixin setContainerBackground($bgColor, $padding) {
-	background: rgba($bgColor,.35);
-	box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	border-radius: 4px;
-	box-shadow: 0px 1px 0px rgba(255, 255, 255, .35), inset 0px 1px 2px rgba($bgColor,.5);	
-	padding: $padding;
+	// For buttons and other form elements
+	@mixin setContainerBackground($bgColor, $padding) {
+		background: rgba($bgColor,.35);
+		box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		border-radius: 4px;
+		box-shadow: 0px 1px 0px rgba(255, 255, 255, .35), inset 0px 1px 2px rgba($bgColor,.5);	
+		padding: $padding;
 	}
 	
-@mixin makeIconFont {
-	font-family: $font-icon;
-	font-weight: 400;
-	font-style: normal;
-	font-size: 1.5em;
-}
-
-@mixin setBackgroundGradient($from: #185cae, $to: #0e387a, $fallback: $swatch-jtnnBlue) {
-    background: $to;
-    background: $fallback;
-    background: -moz-linear-gradient(top, $from 0%, $to 100%);
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$from), color-stop(100%,$to));
-    background: -webkit-linear-gradient(top, $from 0%,$to 100%);
-    background: -o-linear-gradient(top, $from 0%,$to 100%);
-    background: -ms-linear-gradient(top, $from 0%,$to 100%);
-    background: linear-gradient(to bottom, $from 0%,$to 100%);
-       
-}
-
-@mixin setBackgroundGradientReversed($from: #0e387a, $to: #185cae, $fallback: $swatch-jtnnBlue) {
-    background: $to;
-    background: $fallback;
-    background: -moz-linear-gradient(top, $from 0%, $to 100%);
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$from), color-stop(100%,$to));
-    background: -webkit-linear-gradient(top, $from 0%,$to 100%);
-    background: -o-linear-gradient(top, $from 0%,$to 100%);
-    background: -ms-linear-gradient(top, $from 0%,$to 100%);
-    background: linear-gradient(to bottom, $from 0%,$to 100%);
-}
-
-@mixin setBackgroundGradientHover($from: #2cc4ff, $to: #1a9eff, $fallback: $swatch-highlightBlue) {
-    background: $to;
-    background: $fallback;
-    background: -moz-linear-gradient(top, $from 0%, $to 100%);
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$from), color-stop(100%,$to));
-    background: -webkit-linear-gradient(top, $from 0%,$to 100%);
-    background: -o-linear-gradient(top, $from 0%,$to 100%);
-    background: -ms-linear-gradient(top, $from 0%,$to 100%);
-    background: linear-gradient(to bottom, $from 0%,$to 100%);
-}
+	@mixin setBackgroundGradient($from: #185cae, $to: #0e387a, $fallback: $swatch-jtnnBlue) {
+	    background: $to;
+	    background: $fallback;
+	    background: -moz-linear-gradient(top, $from 0%, $to 100%);
+	    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$from), color-stop(100%,$to));
+	    background: -webkit-linear-gradient(top, $from 0%,$to 100%);
+	    background: -o-linear-gradient(top, $from 0%,$to 100%);
+	    background: -ms-linear-gradient(top, $from 0%,$to 100%);
+	    background: linear-gradient(to bottom, $from 0%,$to 100%);
+	       
+	}
+	
+	@mixin setBackgroundGradientReversed($from: #0e387a, $to: #185cae, $fallback: $swatch-jtnnBlue) {
+	    background: $to;
+	    background: $fallback;
+	    background: -moz-linear-gradient(top, $from 0%, $to 100%);
+	    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$from), color-stop(100%,$to));
+	    background: -webkit-linear-gradient(top, $from 0%,$to 100%);
+	    background: -o-linear-gradient(top, $from 0%,$to 100%);
+	    background: -ms-linear-gradient(top, $from 0%,$to 100%);
+	    background: linear-gradient(to bottom, $from 0%,$to 100%);
+	}
+	
+	@mixin setBackgroundGradientHover($from: #2cc4ff, $to: #1a9eff, $fallback: $swatch-highlightBlue) {
+	    background: $to;
+	    background: $fallback;
+	    background: -moz-linear-gradient(top, $from 0%, $to 100%);
+	    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$from), color-stop(100%,$to));
+	    background: -webkit-linear-gradient(top, $from 0%,$to 100%);
+	    background: -o-linear-gradient(top, $from 0%,$to 100%);
+	    background: -ms-linear-gradient(top, $from 0%,$to 100%);
+	    background: linear-gradient(to bottom, $from 0%,$to 100%);
+	}
 
 
 // H5BP Junk
 // ------------------------------------------------
-@import '_normalize.scss';
-@import '_h5bp.scss';
+	@import '_normalize.scss';
+	@import '_h5bp.scss';
 
 
 // Grid System
 // ------------------------------------------------
-@import '_grid.scss';	
+	@import '_grid.scss';	
 	
 	
 // Modules
 // ------------------------------------------------	
-@import 'modules/_type.scss';
-@import 'modules/_navigation.scss';
-@import 'modules/_forms.scss';
-@import 'modules/_nivo.scss';
-@import 'modules/_sidebar.scss';
-@import 'modules/_events.scss';
-
-
-
-/* NEED TO REORGANIZE EVERYTHING BELOW THIS LINE */
+	@import 'modules/_type.scss';
+	@import 'modules/_header.scss';
+	@import 'modules/_navigation.scss';
+	@import 'modules/_footer.scss';
+	@import 'modules/_forms.scss';
+	@import 'modules/_slideshow.scss';
+	@import 'modules/_sidebar.scss';
+	@import 'modules/_events.scss';
+	@import 'modules/_homepage.scss';
+	@import 'modules/_postspages.scss';
 
 	
-// Hero Section
+// Seriously, this is bad guys. 
+// But I had no other choice. So it lives here.
 // ------------------------------------------------	
-
-.hero {
-	background: $swatch-jtnnBlue url(../img/bg-blue.png) repeat;
-	border-top: 5px solid $swatch-dkBlue2;
-	border-bottom: 5px solid $swatch-dkBlue2;
-	// height: 457px;
-	box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	padding-top: 20px;
-	padding-bottom: 20px;
-	margin-bottom: 50px;
-	color: #fff;
-	
-	&.homepage {
-		margin-bottom: 0;
-	}
-	
-	form {
-		@include setContainerBackground(#000, 5px);
-	}
-	
-	&.footer {
-		height: auto;
-		padding-bottom: 20px;
-		margin: 0;
-		
-		.text-button {
-			margin: 3.5em 0 0;
-		
-			&:hover span {
-				color: $color-link;
-				cursor: pointer;
-			}
-		
-			a {
-				color: #edf5ff !important;
-				font-style: italic;
-				font-weight: normal;
-				font-size: 1.125em;
-				text-decoration: none;
-				
-				span {
-					font-family: $font-secondary;
-					font-weight: bold;
-					font-style: normal;
-					padding-top: 5px;
-					display: inline-block;
-					font-size: 1.5em;
-					text-transform: uppercase;
-					color: $swatch-jtnnOrange;
-				}
-			}
-		}
-	}
-}
-
-// Gallery Captions
-dd.wp-caption-text {
-	font-size: .65em;
-	font-weight: bold;
-	font-style: italic;
-	line-height: 1.25em;
-	padding: 5px 12px;
-}
-
-// Main Content Area
-.content {
-	padding-bottom: 50px;
-}
-.container.home-intro {
-	margin-bottom: 15px;
-}
-
-// Footer
-.copyrights {
-	font-size: 0.75em;	
-	
-	img {
-		position: relative;
-		top: 8px;
-		filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale"); /* Firefox 10+, Firefox on Android */
-	    filter: gray; /* IE6-9 */
-	    -webkit-filter: grayscale(100%); /* Chrome 19+, Safari 6+, Safari 6+ iOS */
-	    
-	    &:hover {
-		    filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'1 0 0 0 0, 0 1 0 0 0, 0 0 1 0 0, 0 0 0 1 0\'/></filter></svg>#grayscale");
-		    -webkit-filter: grayscale(0%);
-	    }
-	}
-	
-}
+	@import '_shame.scss';
 
 
-// Widget Settings
-.eventsAdvancedListWidget {
-	h1 {
-		color: #fff;
-		font-family: $font-secondary;
-		font-weight: bold;
-		text-transform: uppercase;
-		font-size: .85em;
-		border-bottom: 1px solid #fff;
-		padding-bottom: 3px;
-	}
-		
-	ul {
-		list-style-type: none;
-		margin: 0;
-		color: #fff;
-		
-		li {
-			position: relative;
-			color: $swatch-ltBlue;
-			
-			.month {
-				font-family: $font-secondary;
-				font-weight: bold;
-				text-transform: uppercase;
-				-webkit-transform: rotate(-90deg);
-				-moz-transform: rotate(-90deg);
-				-ms-transform: rotate(-90deg);
-				-o-transform: rotate(-90deg);
-				filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
-				display: block;
-				position: absolute;
-				top: 0;
-				left: -5px;
-				font-size: 1.125em;
-				padding: 10px 0;
-			}
-			
-			.day {
-				font-family: $font-secondary;
-				font-weight: bold;
-				position: absolute;
-				top: 0;
-				left: 15px;
-				font-size: 2.75em;
-				padding-left: 5px;
-				padding-top: 8px;
-				text-align: right;
-				display: block;
-				min-width: 45px;
-			}
-			
-			.event a {
-				color: $swatch-ltBlue;
-				text-decoration: none;
-				
-				&:hover {
-					color: $color-link;
-					text-decoration: underline;
-				}
-			}
-			
-			.loc {
-				position: relative;
-				top: -5px;
-			}
-			
-			.event,
-			.loc {
-				margin-left: 70px;
-				font-size: .80em;
-			}
-		}
-	}	
-}
-
-#sidebar-blog {
-	h1.widget-title {
-		font-size: 1.1em;
-		color: $swatch-mdBlue2;
-		font-family: $font-secondary;
-		font-weight: bold;
-		text-transform: uppercase;
-		border-bottom: 1px solid $swatch-ltBlue2;
-		padding-bottom: .5em;
-	}
-	
-	ul {
-		list-style-type: none;
-		margin: 0;
-		
-		li {
-			padding: .5em 0;
-			border-bottom: 1px solid $swatch-ltBlue2;
-			box-shadow: 0px 1px 0px rgba(255,255,255,.5);
-			font-size: .85em;
-			
-			a{
-				text-decoration: none;
-				color: $swatch-mdBlue2;
-				
-				&:hover {
-					color: $color-link;
-				}
-			}
-		}
-	}
-}
-
-.entry-title {
-	margin-bottom: .5em;
-
-	a {
-		text-decoration: none;
-		color: $swatch-dkBlue;
-		
-		&:hover {
-			color: $color-link;
-		}
-	}
-}
-
-.navigation-paging {
-	margin-top: 1.5em;
-}
-
-// Slideshow
-.slider-wrapper.theme-default {
-	width: 670px;
-	min-height: 400px;
-	position: relative;
-	box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	
-	.nivo-controlNav {
-		position: absolute;
-		bottom: -30px;
-		z-index: 5;
-		text-align: center;
-		padding: 12px 10px;
-		//outline: 1px solid lime;
-		width: 670px;
-		
-		a {
-			display:inline-block;
-			width:16px;
-			height:17px;
-			background:url(../img/radio-buttons.png) no-repeat;
-			background-position: top left;
-			border:0;
-			margin: 0 2px;
-			text-indent:-9999px;
-			
-			&:hover {
-				background-position: top center;
-			}
-			
-			&.active {
-				background-position:top right;
-			}
-		}
-	}
-	
-	.nivoSlider {
-		width: 650px;
-		height: 374px;
-		position: absolute;
-		top: 10px;
-		left: 10px;
-		padding: 10px;
-		box-sizing: border-box;
-		-moz-box-sizing: border-box;
-		
-		a img {
-			position: absolute;
-			top: 10px !important;
-			left: 10px !important;width: 630px !important;
-			height: 354px !important;
-		}
-		
-		.nivo-slice {
-			top: 10px !important;
-			left: 10px !important;
-		}
-		
-		.nivo-imageLink {
-			padding: 10px;
-			box-sizing: border-box;
-			-moz-box-sizing: border-box;
-		}
-	}
-}
-.hero-slideshow,
-.hero-youtube {
-	float: left;
-}
-.hero-youtube {
-	margin-top: 40px;
-	@include setContainerBackground(#000, 10px 10px 2px 10px );
-}
-.hero-social-banner {
-	position: relative;	
-	
-	img {
-		position: absolute;
-		top: 200px;
-		right: -20px;
-		z-index: 10;
-	}	
-}
-
-	@media screen and (max-width: 1000px){
-		.hero-social-banner {
-			display: none;
-		}
-	}
-
-.social-icon-wrap {
-	@include setContainerBackground(#000, 10px);
-	float: left;
-	margin: 45px 12px;		
-	
-	img:hover {
-	    filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale"); /* Firefox 10+, Firefox on Android */
-	    filter: gray; /* IE6-9 */
-	    -webkit-filter: grayscale(100%); /* Chrome 19+, Safari 6+, Safari 6+ iOS */
-    }
-}
+// Mobile
+// ------------------------------------------------	
+	@import '_mobile.scss';
 
 
-
-// HR 
-hr.news:before {
-	content: "Latest News";
-	color: $swatch-mediumGrey;
-	text-shadow: 0px 1px 0px #fff;
-	position: relative;
-	top: -25px;
-	font-family: $font-secondary;
-	font-weight: bold;
-	letter-spacing: 1px;
-	font-size: 1em;
-	text-transform: uppercase;
-}
-
-.read-more-feed {
-	color: $swatch-mediumGrey;
-	text-shadow: 0px 1px 0px #fff;
-	font-family: $font-secondary;
-	font-weight: bold;
-	letter-spacing: 1px;
-	font-size: 1em;
-	text-transform: uppercase;
-	border-top: 1px solid $swatch-mediumGrey;
-	box-shadow: inset 0px 1px 0px #fff;
-	text-align: right;
-}
-
-
-
-.calls-to-action {
-	text-align: right;
-	padding-top: 50px;
-	
-	h5 {
-		margin-top: 25px;
-	}
-}
-
-
-
-
-
-.nav-previous,
-.nav-next {
-	width: 50%;
-	padding: 0;
-	margin: 0;
-	box-sizing: border-box;
-	-moz-box-sizing: border-box;
-}
-.nav-previous {	
-	float: left;
-}
-.nav-next {
-	float: right;
-	text-align: right;
-}
-
-
-.jtfeed {
-	margin-bottom: 50px;
-	
-	&:last-of-type {
-		margin-bottom: 0;
-	}
-	
-	h3 {
-		margin-top: 0;
-		
-		a {
-			text-decoration: none;
-		    color: lighten($color-headingDark, 8%);
-		    
-			&:hover {
-				color: $color-link;
-			}
-		}
-	}
-}
-
-.metadata {
-	color: $swatch-mediumGrey;
-	font-size: .75em;
-	font-style: italic;
-	margin-top: 0;
-}
-
-a.donate-badge {
-	@include setBackgroundGradient();
-	display: block;
-	text-align: center;
-	margin: 0px auto;
-	width: 200px;
-	border-radius: 50%;
-	height: 200px;
-	box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	padding: 50px 35px 0;
-	color: $swatch-jtnnOrange;
-	text-decoration: none;
-	font-family: $font-secondary;
-	font-size: 2em;
-	line-height: 1em;
-	font-weight: bold;
-	text-transform: uppercase;
-	box-shadow: inset 0px 1px 8px rgba(255,255,255,.8), inset 0px -2px 8px rgba(0,0,0,.9);
-	
-	&:hover {
-		@include setBackgroundGradientHover();
-		box-shadow: inset 0px 1px 8px rgba(255,255,255,.8), inset 0px -2px 8px rgba(0,0,0,.3);
-	}
-	
-	span {
-		display: inline-block;
-		font-weight: normal;
-		font-size: .75em;
-		padding-top: 10px;
-		color: #fff;
-	}
-}
-
-
-
-
-/*	??
-	----------------------------------------------- */
-	body {
-		background: url(../img/bg-light.png) repeat;
-	}
-	
-	.button-container {
-		@include setContainerBackground($swatch-lightGrey, 10px);
-		display: inline-block;
-		border-radius: 6px;
-		padding: 13px 5px;
-	}
-	
-	.button {
-		@include setBackgroundGradient();
-		font-style: italic;
-		color: #fff;
-		text-decoration: none;
-		padding: 10px 20px;
-		border-radius: 4px;
-		
-		&:hover {
-			@include setBackgroundGradientHover();
-			color: #fff;
-		}	
-		
-		&:active, &:visited {
-			color: #fff;
-		}	
-		
-		&.flat {
-			font-weight: 700;
-			font-style: normal;
-			font-family: $font-secondary;
-			text-transform: uppercase;
-			background-color: $swatch-jtnnOrange;
-			background-image: none;
-			border-radius: 0px;
-			
-			&:hover {
-				background-color: lighten($swatch-jtnnOrange, 20%);
-				color: #fff;
-			}
-			
-			&.flat.secondary{
-				background-color: $swatch-jtnnBlue;
-				
-				&:hover {
-					background-color: lighten($swatch-jtnnBlue, 20%);
-				}
-			}
-		}
-		
-	}
-
-img.alignright {
-	float: right;
-	margin-left: 10px;
-}
-
-img.alignleft {
-	float: left;
-	margin-right: 10px;
-}
-	
-	
-/*	Header Structure
-	----------------------------------------------- */	
-	
-	#page {
-		border-top: 5px solid $swatch-dkBlue3;
-	}
-	
-	/* Buttons */
-	.button.flat {
-		padding: 12px 20px;
-		text-decoration: none;
-	}	
-	
-	header img {
-		margin: 47px 0;
-	}
-
-
-
-
-
-
-/* Smartphones (portrait and landscape) ----------- */
-@media only screen 
-//and (min-device-width : 320px)
-//and (max-device-width : 600px) 
-and (min-width: 320px)
-and (max-width: 600px)
-
-{
-	.hero-youtube,
-	.hero-social,
-	.widget_recent_entries,
-	.widget_archive,
-	#sidebar-home,
-	#secondary {
-		display: none;
-	}
-	.hero-slideshow {
-		float: none !important;
-		width: 650px;
-		margin-left: auto;
-		margin-right: auto;
-	}
-	#content-home,
-	.content.container .col8,
-	#sidebar-blog,
-	#sidebar-blog .widget_categories {
-		float: none;
-		width: 940px;
-		display: block;
-	}
-	
-	#sidebar-blog {
-		padding-top: 25px;
-		width: 940px;
-		clear: both;
-		
-		.widget_categories {
-			li {
-				color: #fff;
-				display: inline-block;
-				border: none;
-				-webkit-box-shadow: none;
-				padding: 10px 8px;
-				margin: 5px 10px 5px 0;
-				background-color: $swatch-jtnnBlue;
-				
-				a {
-					color: #fff;
-				}
-			}
-		}
-	}
-	
-	
-	#sidebar-blog {
-		display: none;
-	}
-	
-	input:not([type=submit]),
-	textarea {
-		-webkit-appearance: none;
-	}
-	form.searchform input:not([type=submit]) {
-		width: 210px;
-	}
-
-}
-
-/* Smartphones (landscape) ----------- */
-@media only screen 
-and (min-width : 321px) {
-/* Styles */
-}
-
-/* Smartphones (portrait) ----------- */
-@media only screen 
-and (max-width : 320px) {
-/* Styles */
-}
-
-/* iPads (portrait and landscape) ----------- */
-@media only screen 
-and (min-device-width : 768px) 
-and (max-device-width : 1024px) {
-/* Styles */
-}
-
-/* iPads (landscape) ----------- */
-@media only screen 
-and (min-device-width : 768px) 
-and (max-device-width : 1024px) 
-and (orientation : landscape) {
-
-	input:not([type=submit]),
-	textarea {
-		-webkit-appearance: none;
-	}
-	form.searchform input:not([type=submit]) {
-		width: 210px;
-	}
-	
-}
-
-/* iPads (portrait) ----------- */
-@media only screen 
-and (min-device-width : 768px) 
-and (max-device-width : 1024px) 
-and (orientation : portrait) {
-
-	input:not([type=submit]),
-	textarea {
-		-webkit-appearance: none;
-	}
-	form.searchform input:not([type=submit]) {
-		width: 210px;
-	}
-
-}
-
-/* Desktops and laptops ----------- */
-@media only screen 
-and (min-width : 1224px) {
-/* Styles */
-}
-
-/* Large screens ----------- */
-@media only screen 
-and (min-width : 1824px) {
-/* Styles */
-}
-
-/* iPhone 4 ----------- */
-@media
-only screen and (-webkit-min-device-pixel-ratio : 1.5),
-only screen and (min-device-pixel-ratio : 1.5) {
-
-	
-
-}
-	
-	
-	
-	
-	
-	
+// Print
+// ------------------------------------------------	
+	@import '_print.scss';
 
