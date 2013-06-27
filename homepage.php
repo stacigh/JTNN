@@ -93,7 +93,7 @@ wp_reset_query();
 	                    </a>
 	                </h3>
 	                
-	                <p class="metadata">Posted on <?php echo esc_html( $item->get_date('F j, Y') ); ?> by <?php echo esc_html( $item->get_author()->get_name() ); ?> | More News on <a href="http://www.drugfree.org/join-together" title="Drugfree.org" target="_blank">Drugfree.org</a></p>
+	                <p class="metadata">Posted on <?php echo esc_html( $item->get_date('F j, Y') ); ?> by <?php echo esc_html( $item->get_author()->get_name() ); ?></p>
 	                
 	                <p><?php echo strip_tags( $item->get_description() ); ?></p>
 	                
@@ -106,7 +106,7 @@ wp_reset_query();
 	        <?php endforeach; ?>
 	    <?php endif; ?>
 	    
-	    <p class="read-more-feed">Read more news at <a href="http://www.drugfree.org/join-together" title="Drugfree.org" target="_blank">Drugfree.org</a>
+	    <p class="read-more-feed">Read <a href="http://www.drugfree.org/join-together" title="Drugfree.org" target="_blank">more news</a>
 		
 	</article>
 	
